@@ -1,281 +1,207 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
- <title>Ustubo Kento | Makeup Artist Portfolio</title>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ustubo Kento | Makeup Artist Portfolio</title>
 <meta name="description" content="Ustubo Kento（宇坪健人）のメイクアップアーティストポートフォリオ。作品・実績・コンタクト掲載。">
 
-
-  <title>Intro → Menu (改訂版)</title>
-
 <style>
-  html, body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-    overflow-x: hidden;
-  }
-  .intro-wrapper {
-width: 100%;
-height: 100vh;
-position: relative;
-background: black;
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-
-.intro-img {
-position: absolute;
-width: 60%;
-max-width: 550px;
-opacity: 0;
-animation: slideUp 4s ease-in-out forwards;
+body{
+  background:black;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
 }
 
-
-.intro-img.img2 {
-animation-delay: 1s;
+/* ===== INTRO ===== */
+.intro-wrapper{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
 
-
-.intro-img.img3 {
-animation-delay: 2s;
+.intro-img{
+  position:absolute;
+  width:85%;
+  max-width:500px;
+  opacity:0;
+  animation:slideUp 4s ease-in-out forwards;
 }
 
+.intro-img.img2{ animation-delay:1s; }
+.intro-img.img3{ animation-delay:2s; }
 
-@keyframes slideUp {
-0% {
-transform: translateY(100%);
-opacity: 0;
-}
-30% {
-opacity: 1;
-}
-60% {
-transform: translateY(0);
-opacity: 1;
-}
-100% {
-transform: translateX(-150%);
-opacity: 0;
-}
+@keyframes slideUp{
+  0%{ transform:translateY(100%); opacity:0; }
+  30%{ opacity:1; }
+  60%{ transform:translateY(0); opacity:1; }
+  100%{ transform:translateX(-120%); opacity:0; }
 }
 
-
-.intro-text {
-position: absolute;
-color: white;
-font-size: 32px;
-opacity: 0;
-animation: fadeIn 3s ease-in-out 2.5s forwards;
-}
-.intro-text-1 {
-    position: absolute;
-    color: white;
-    top: 87%;
-    opacity: 0;
-    font-size: 18px;
-    animation: scrollFade 3s ease-in-out 3s forwards;
-}
-.intro-text-2 {
-    position: absolute;
-    color: white;
-    top: 40%;
-    opacity: 0;
-    font-size: 18px;
-    animation: scrollFade 3s ease-in-out 3s forwards;
+.intro-text{
+  position:absolute;
+  font-size:clamp(20px,6vw,32px);
+  opacity:0;
+  animation:fadeIn 3s ease 2.5s forwards;
 }
 
-@keyframes scrollFade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 1;
-    }
+.intro-sub{
+  position:absolute;
+  top:60%;
+  font-size:clamp(12px,3.5vw,16px);
+  opacity:0;
+  animation:fadeIn 3s ease 3s forwards;
 }
 
-
-
-@keyframes fadeIn {
-0% { opacity: 0; }
-100% { opacity: 1; }
+.scroll{
+  position:absolute;
+  bottom:5%;
+  font-size:12px;
+  opacity:0;
+  animation:fadeIn 3s ease 3.5s forwards;
 }
 
-  .work {
-      text-align: center;
-      font-size: 30px;
-      color: white;
-      margin-top: 40px;
-  }
+@keyframes fadeIn{
+  to{ opacity:1; }
+}
 
-  .text {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      z-index: 100;
-  }
+/* ===== NAV ===== */
+.menu{
+  position:fixed;
+  top:10px;
+  left:10px;
+  font-size:14px;
+  text-decoration:none;
+  color:white;
+  z-index:100;
+}
 
-  .main {
-      width: 100%;
-      height: auto;
+/* ===== CONTENT ===== */
+.work{
+  text-align:center;
+  font-size:22px;
+  margin:30px 0;
+}
+
+.main{
+  width:100%;
+  padding:0 10px;
+}
+
+.main p{
+  text-align:center;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.photo{
+  width:100%;
+  max-width:600px;
+  display:block;
+  margin:0 auto 20px;
+  cursor:default;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.photo.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== PC ===== */
+@media(min-width:768px){
+
+  .main{
+    max-width:900px;
+    margin:auto;
   }
 
-  /* ▼ 写真のフェードイン初期状態 */
- .photo {
-     padding-top: 24px;
-      width: 90%;
-      height: auto;
-      max-width: 520px;
-      display: block;
-      margin: 0 auto 20px auto;
-      cursor: pointer;
-      scroll-margin-top: 24px;
-
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.2s ease, transform 1.2s ease;
+  .work{
+    font-size:28px;
   }
 
-  /* ▼ 表示モード（ふぁーっと表示） */
-  .show {
-      opacity: 1;
-      transform: translateY(0);
+  .main p{
+    font-size:16px;
   }
 
-  .main p {
-      color: white;
-      text-align: center;
-  }
+}
 
-  .site-footer {
-      padding: 18px 12px 28px;
-      color: white;
-      text-align: center;
-      font-size: 13px;
-  }
+footer{
+  text-align:center;
+  font-size:12px;
+  padding:20px;
+}
 
-  /* ▼ スマホ */
-  @media screen and (max-width: 480px) {
-       .text {
-        font-size: 16px;
-        top: 10px;
-        left: 10px;
-    }
-
-    .photo {
-        width: 96%;
-        max-width: 100%;
-    }
-  }
-
-  /* ▼ PC */
-  @media screen and (min-width: 481px) {
-      .main {
-          width: 100%;
-          margin: 0 auto;
-      }
-
-      .text-8{
-        position: fixed;
-        top: 150px;
-        left: 10%;
-        font-size: 20px;
-      }
-
-      .photo {
-          width: 79%;
-          max-width: 650px;
-      }
-
-      .main p {
-          font-size: 18px;
-      }
-  }
 </style>
 </head>
 
 <body>
+
 <div class="intro-wrapper">
-<img src="road.jpg" class="intro-img img1" />
-<img src="snow-2.jpg" class="intro-img img2" />
-<img src="street-1.jpg" class="intro-img img3" />
+  <img src="road.jpg" class="intro-img img1">
+  <img src="snow-2.jpg" class="intro-img img2">
+  <img src="street-1.jpg" class="intro-img img3">
 
-
-<div class="intro-text">  UTSUBO KENTO</div>
-<div class="intro-text-2">Photographer</div>
-<div class="intro-text-1">↓scroll</div>
-
+  <div class="intro-text">UTSUBO KENTO</div>
+  <div class="intro-sub">Photographer</div>
+  <div class="scroll">↓ scroll</div>
 </div>
-<a href="manu.html" class="text">manu</a>
-<p class="work">work</p>
+
+<a href="manu.html" class="menu">menu</a>
+
+<div class="work">WORK</div>
 
 <section class="main">
-    <p class="text-6">Kent's Worldwide Photo Collection</p>
-    <p class="text-8">Pursuing beauty</p>
 
-    <img src="110st newyork.jpg" class="photo"><p>text</p>
-    <img src="art.jpg" class="photo"><p>text</p>
-    <img src="black.jpg" class="photo"><p>text</p>
-    <img src="show.jpg" class="photo"><p>text</p>
-    <p>Original work</p>
-    <img src="aunt1.jpg" class="photo"><p>text</p>
-    <img src="bluesky.jpg" class="photo"><p>text</p>
-    <img src="tika.jpg" class="photo"><p>text</p>
-    <img src="wiliamsburg.jpg" class="photo"><p>text</p>
-    <img src="bluesky.jpg" class="photo"><p>text</p>
-    <img src="subeay2.jpg" class="photo"><p>text</p>
+  <p>Kent's Worldwide Photo Collection</p>
+
+  <img src="110st newyork.jpg" class="photo"><p>text</p>
+  <img src="art.jpg" class="photo"><p>text</p>
+  <img src="black.jpg" class="photo"><p>text</p>
+  <img src="show.jpg" class="photo"><p>text</p>
+
+  <p>Original work</p>
+
+  <img src="aunt1.jpg" class="photo"><p>text</p>
+  <img src="bluesky.jpg" class="photo"><p>text</p>
+  <img src="tika.jpg" class="photo"><p>text</p>
+  <img src="wiliamsburg.jpg" class="photo"><p>text</p>
 
 </section>
 
 <script>
-  const photos = document.querySelectorAll('.photo');
+const photos=document.querySelectorAll('.photo');
 
-  photos.forEach((photo, index) => {
-      const photoId = `home-photo-${index + 1}`;
-
-      photo.id = photoId;
-
-      photo.addEventListener('click', () => {
-          const imagePath = photo.getAttribute('src');
-
-          if (!imagePath) {
-              return;
-          }
-
-          window.location.href = `beauty-editorial.html?image=${encodeURIComponent(imagePath)}&from=${encodeURIComponent('index.html')}&photo=${encodeURIComponent(photoId)}`;
-      });
+photos.forEach((photo,index)=>{
+  photo.addEventListener('click',()=>{
+    const src=photo.getAttribute('src');
+    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}`;
   });
+});
 
-  const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-          }
-      });
-  }, {
-      threshold: 0.2
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
   });
+},{threshold:0.2});
 
-  photos.forEach(photo => {
-      observer.observe(photo);
-  });
+photos.forEach(p=>observer.observe(p));
 </script>
 
-<footer class="site-footer">©Kimiaki Yasui</footer>
+<footer>©Kimiaki Yasui</footer>
 
 </body>
 </html>
