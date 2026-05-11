@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+ <title>Ustubo Kento | Makeup Artist Portfolio</title>
+
+<meta name="description" content="Ustubo Kento（宇坪健人）のメイクアップアーティストポートフォリオ。作品・実績・コンタクト掲載。">
+
+
+  <title>Intro → Menu (改訂版)</title>
+
+<style>
+  html, body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+  }
+  .intro-wrapper {
+width: 100vw;
+height: 100vh;
+position: relative;
+background: black;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+
+.intro-img {
+position: absolute;
+width: 60%;
+max-width: 550px;
+opacity: 0;
+animation: slideUp 4s ease-in-out forwards;
+}
+
+
+.intro-img.img2 {
+animation-delay: 1s;
+}
+
+
+.intro-img.img3 {
+animation-delay: 2s;
+}
+
+
+@keyframes slideUp {
+0% {
+transform: translateY(100%);
+opacity: 0;
+}
+30% {
+opacity: 1;
+}
+60% {
+transform: translateY(0);
+opacity: 1;
+}
+100% {
+transform: translateX(-150%);
+opacity: 0;
+}
+}
+
+
+.intro-text {
+position: absolute;
+color: white;
+font-size: 32px;
+opacity: 0;
+animation: fadeIn 3s ease-in-out 2.5s forwards;
+}
+.intro-text-1 {
+    position: absolute;
+    color: white;
+    top: 87%;
+    opacity: 0;
+    font-size: 18px;
+    animation: scrollFade 3s ease-in-out 3s forwards;
+}
+.intro-text-2 {
+    position: absolute;
+    color: white;
+    top: 40%;
+    opacity: 0;
+    font-size: 18px;
+    animation: scrollFade 3s ease-in-out 3s forwards;
+}
+
+@keyframes scrollFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+  .work {
+      text-align: center;
+      font-size: 30px;
+      color: white;
+      margin-top: 40px;
+  }
+
+  .text {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      z-index: 100;
+  }
+
+  .main {
+      width: 100%;
+      height: auto;
+  }
+
+  /* ▼ 写真のフェードイン初期状態 */
+ .photo {
+     padding-top: 24px;
+      width: 70%; /* ← 86% → 小さく調整 */
+      height: auto;
+      max-width: 440px; /* ← 480px → 少し小さく */
+      display: block;
+      margin: 0 auto 20px auto;
+      cursor: pointer;
+      scroll-margin-top: 24px;
+
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+
+  /* ▼ 表示モード（ふぁーっと表示） */
+  .show {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .main p {
+      color: white;
+      text-align: center;
+  }
+
+  .site-footer {
+      padding: 18px 12px 28px;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+  }
+
+  /* ▼ スマホ */
+  @media screen and (max-width: 480px) {
+       .text {
+        font-size: 16px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .photo {
+        width: 80%;   /* ← 今より大きく！ */
+        max-width: 100%;
+    }
+  }
+
+  /* ▼ PC */
+  @media screen and (min-width: 481px) {
+      .main {
+          width: 100%;
+          margin: 0 auto;
+      }
+
+      .text-8{
+        position: fixed;
+        top: 150px;
+        left: 10%;
+        font-size: 20px;
+      }
+
+      .photo {
+          width: 60%; /* ← PCも小さく */
+          max-width: 550px;
+      }
+
+      .main p {
+          font-size: 18px;
+      }
+  }
+</style>
+</head>
+
+<body>
+<div class="intro-wrapper">
+<img src="road.jpg" class="intro-img img1" />
+<img src="snow-2.jpg" class="intro-img img2" />
+<img src="street-1.jpg" class="intro-img img3" />
+
+
+<div class="intro-text">  UTSUBO KENTO</div>
+<div class="intro-text-2">Photographer</div>
+<div class="intro-text-1">↓scroll</div>
+
+</div>
+<a href="manu.html" class="text">manu</a>
+<p class="work">work</p>
+
+<section class="main">
+    <p class="text-6">Kent's Worldwide Photo Collection</p>
+    <p class="text-8">Pursuing beauty</p>
+
+    <img src="110st newyork.jpg" class="photo"><p>text</p>
+    <img src="art.jpg" class="photo"><p>text</p>
+    <img src="black.jpg" class="photo"><p>text</p>
+    <img src="show.jpg" class="photo"><p>text</p>
+    <p>Original work</p>
+    <img src="aunt1.jpg" class="photo"><p>text</p>
+    <img src="bluesky.jpg" class="photo"><p>text</p>
+    <img src="tika.jpg" class="photo"><p>text</p>
+    <img src="wiliamsburg.jpg" class="photo"><p>text</p>
+    <img src="bluesky.jpg" class="photo"><p>text</p>
+    <img src="subeay2.jpg" class="photo"><p>text</p>
+
+</section>
+
+<script>
+  const photos = document.querySelectorAll('.photo');
+
+  photos.forEach((photo, index) => {
+      const photoId = `home-photo-${index + 1}`;
+
+      photo.id = photoId;
+
+      photo.addEventListener('click', () => {
+          const imagePath = photo.getAttribute('src');
+
+          if (!imagePath) {
+              return;
+          }
+
+          window.location.href = `beauty-editorial.html?image=${encodeURIComponent(imagePath)}&from=${encodeURIComponent('index.html')}&photo=${encodeURIComponent(photoId)}`;
+      });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+          }
+      });
+  }, {
+      threshold: 0.2
+  });
+
+  photos.forEach(photo => {
+      observer.observe(photo);
+  });
+</script>
+
+<footer class="site-footer">©Kimiaki Yasui</footer>
+
+</body>
+</html>

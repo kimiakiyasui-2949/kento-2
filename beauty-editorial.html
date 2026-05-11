@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ustubo Kento | Makeup Artist Portfolio</title>
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #040404;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.header {
+  background: #0f0f0f;
+  padding: 30px 20px;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #a82086;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.meta {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0c0c0c;
+  border-bottom: 1px solid #0b0b0b;
+  color: #ffffff;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.user {
+  background: #020202;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.search {
+  background: #0c0c0c;
+  padding: 10px 20px;
+  border-bottom: 1px solid #0b0b0b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.hero {
+  position: relative;
+  margin-top: 20px;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+  max-height: 72vh;
+  object-fit: cover;
+}
+
+.top-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.box {
+  background: #0c0c0c;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.link {
+  color: #8c7a2a;
+  cursor: pointer;
+}
+
+.small {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer {
+  padding: 18px 12px 28px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 640px) {
+  .nav,
+  .search {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .box,
+  .back-link {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="header">
+  <div class="wrap">
+    <h1>TEXT</h1>
+    <p class="subtitle">Playtime</p>
+    <p class="meta">
+      
+    March 2026
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<main>
+  <a href="index.html" class="back-link" id="back-link">← Back</a>
+
+  <div class="hero">
+    <img src="110st newyork.jpg" alt="Beauty editorial image" id="editorial-image">
+    
+  </div>
+
+  <div class="box">
+    In this picture: <span class="link">Beauty</span>
+  </div>
+
+
+  <div class="box">
+    <h3>All people in this editorial:</h3>
+    <p class="small">See something wrong? <span class="link">Let us know</span></p>
+
+    <ul>
+      <li><span class="link">Danielle Levitt</span> - Photographer</li>
+      <li><span class="link">Edem Dossou</span> - Fashion Editor/Stylist</li>
+      <li><span class="link">Tina Outen</span> - Hair Stylist</li>
+      <li><span class="link">Kento Utsubo</span> - Makeup Artist</li>
+      <li><span class="link">Aliza Jarmon</span> - Model</li>
+      <li><span class="link">Amane Taniguchi</span> - Model</li>
+      <li><span class="link">Beauty</span> - Model</li>
+      <li><span class="link">Celine Vivod</span> - Model</li>
+      <li><span class="link">Danielle Littleford</span> - Model</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site-footer">©Kimiaki Yasui</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const imagePath = params.get('image');
+  const fromPath = params.get('from');
+  const photoId = params.get('photo');
+  const backLink = document.getElementById('back-link');
+  const editorialImage = document.getElementById('editorial-image');
+  const allowedBackPaths = new Set(['index.html', 'text.html']);
+
+  if (imagePath && editorialImage) {
+    editorialImage.src = imagePath;
+    editorialImage.alt = `${imagePath} editorial image`;
+  }
+
+  if (backLink && fromPath && allowedBackPaths.has(fromPath)) {
+    backLink.href = photoId ? `${fromPath}#${photoId}` : fromPath;
+  }
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Ustubo Kento",
+ "alternateName": "宇坪健人",
+ "jobTitle": "Makeup Artist",
+ "url": "https://ustubokento.com",
+ "sameAs": [
+   "https://instagram.com/あなたのURL",
+   "https://x.com/あなたのURL"
+ ]
+}
+</script>
+
+</body>
+</html>
