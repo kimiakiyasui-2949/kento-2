@@ -119,6 +119,132 @@ body{
   transform:translateY(0);
 }
 
+.photo-small{
+  width:82%;
+  max-width:480px;
+}
+
+.art-slider{
+  position:relative;
+  width:82%;
+  max-width:480px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition: 0.5es;
+}
+
+.art-slider.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.art-track{
+  display:flex;
+  width:300%;
+  height:100%;
+  animation:wiliTrack 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.art-slider.show .art-track{
+  animation-play-state:running;
+}
+
+.art-slide-photo{
+  width:33.333%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+.show-slider{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track{
+  display:flex;
+  width:300%;
+  height:100%;
+  animation:wiliTrack 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider.show .show-track{
+  animation-play-state:running;
+}
+
+.show-slide-photo{
+  width:33.333%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+.wili-slider{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.wili-slider.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.wili-track{
+  display:flex;
+  width:300%;
+  height:100%;
+  animation:wiliTrack 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.wili-slider.show .wili-track{
+  animation-play-state:running;
+}
+
+.wili-slide-photo{
+  width:33.333%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes wiliTrack{
+  0%, 28%  { transform:translateX(0); }
+  33%, 61% { transform:translateX(-33.333%); }
+  66%, 94% { transform:translateX(-66.666%); }
+  99%, 100%{ transform:translateX(0); }
+}
+
 /* ===== PC ===== */
 @media(min-width:768px){
 
@@ -166,27 +292,61 @@ footer{
 
   <p>Kent's Worldwide Photo Collection</p>
 
-  <img src="110st newyork.jpg" class="photo"><p>text</p>
-  <img src="art.jpg" class="photo"><p>text</p>
-  <img src="black.jpg" class="photo"><p>text</p>
-  <img src="show.jpg" class="photo"><p>text</p>
+  <img src="110st newyork.jpg" 
+  class="photo"><p>text</p>
 
-  <p>Original work</p>
 
-  <img src="aunt1.jpg" class="photo"><p>text</p>
-  <img src="bluesky.jpg" class="photo"><p>text</p>
-  <img src="tika.jpg" class="photo"><p>text</p>
-  <img src="wiliamsburg.jpg" class="photo"><p>text</p>
+      <img src="art.jpg" 
+      class="photo"><p>text</p>
+
+      
+
+  
+    <div class="show-slider">
+    <div class="show-track">
+      <img src="aunt1.jpg" class="show-slide-photo">
+      <img src="beach.jpg" class="show-slide-photo">
+      <img src="subeay2.jpg" class="show-slide-photo">
+    </div>
+  </div><p>text</p>
+  
+  <img src="black.jpg" 
+      class="photo"><p>text</p>
+
+
+
+
+    
+
+
+
+  
+  
+
 
 </section>
 
 <script>
 const photos=document.querySelectorAll('.photo');
+const allPhotoSrcs=Array.from(photos).map((photo)=>photo.getAttribute('src'));
 
-photos.forEach((photo,index)=>{
+photos.forEach((photo)=>{
   photo.addEventListener('click',()=>{
     const src=photo.getAttribute('src');
-    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}`;
+    const idx=allPhotoSrcs.indexOf(src);
+    const slides=allPhotoSrcs.join('|');
+    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}&slides=${encodeURIComponent(slides)}&idx=${idx}`;
+  });
+});
+
+document.querySelectorAll('.art-slide-photo, .show-slide-photo, .wili-slide-photo').forEach((photo)=>{
+  photo.addEventListener('click',()=>{
+    const src=photo.getAttribute('src');
+    const track=photo.parentElement;
+    const siblings=Array.from(track.querySelectorAll('img'));
+    const idx=siblings.indexOf(photo);
+    const slides=siblings.map((img)=>img.getAttribute('src')).join('|');
+    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}&slides=${encodeURIComponent(slides)}&idx=${idx}`;
   });
 });
 
@@ -199,6 +359,12 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:0.2});
 
 photos.forEach(p=>observer.observe(p));
+const artSlider=document.querySelector('.art-slider');
+if(artSlider) observer.observe(artSlider);
+const showSlider=document.querySelector('.show-slider');
+if(showSlider) observer.observe(showSlider);
+const wiliSlider=document.querySelector('.wili-slider');
+if(wiliSlider) observer.observe(wiliSlider);
 </script>
 
 <footer>©Kimiaki Yasui</footer>
