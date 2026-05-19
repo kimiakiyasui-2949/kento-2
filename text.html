@@ -63,6 +63,43 @@
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
+    .tikatetu-slider {
+        width: 84%;
+        max-width: 560px;
+        margin: 24px auto 20px;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .tikatetu-track {
+        display: flex;
+        width: 300%;
+        animation: tikatetuTrack 12s ease-in-out infinite;
+        animation-play-state: paused;
+    }
+
+    .tikatetu-slider.show .tikatetu-track {
+        animation-play-state: running;
+    }
+
+    .tikatetu-slide-photo {
+        width: 33.333%;
+        max-width: none;
+        margin: 0;
+        padding-top: 0;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+
+    @keyframes tikatetuTrack {
+        0%, 28% { transform: translateX(0); }
+        33%, 61% { transform: translateX(-33.333%); }
+        66%, 94% { transform: translateX(-66.666%); }
+        99%, 100% { transform: translateX(0); }
+    }
+
   /* ▼ スクロールで画面に入ったら表示 */
   .show {
       opacity: 1;
@@ -142,22 +179,31 @@
     <p class="text-7"> Kento's Masterpiece</p>
 
     <img src="red.jpg" class="photo"><p>text</p>
-    <img src="tikatetu.jpg" class="photo"><p>text</p>
-    <img src="tree.jpg" class="photo"><p>text</p>
-    <img src="tikatetu.jpg" class="photo"><p>text</p>
+        <div class="tikatetu-slider">
+            <div class="tikatetu-track">
+                <img src="tikatetu.jpg" class="tikatetu-slide-photo">
+                <img src="tree.jpg" class="tikatetu-slide-photo">
+                <img src="tikatetu.jpg" class="tikatetu-slide-photo">
+            </div>
+        </div><p>text</p>
     <img src="aunt1.jpg" class="photo"><p>text</p>
     <img src="bluesky.jpg" class="photo"><p>text</p>
-    <img src="tika.jpg" class="photo"><p>text</p>
-    <p>it is perfect</p>
-    <img src="snow.jpg" class="photo"><p>text</p>
-    <img src="street.jpg" class="photo"><p>text</p>
-    <img src="pink.jpg" class="photo"><p>text</p>
+        <div class="tikatetu-slider">
+            <div class="tikatetu-track">
+                <img src="tika.jpg" class="tikatetu-slide-photo">
+                <img src="street.jpg" class="tikatetu-slide-photo">
+                <img src="pink.jpg" class="tikatetu-slide-photo">
+            </div>
+        </div><p>text</p>
+        <img src="beach.jpg" class="photo"><p>text</p>
+    
 
 </section>
 
 <!-- ▼ スクロール検知して “show” を付けるJS -->
 <script>
   const photos = document.querySelectorAll('.photo');
+    const tikatetuSlides = document.querySelectorAll('.tikatetu-slide-photo');
 
   photos.forEach((photo, index) => {
       const photoId = `beauty-photo-${index + 1}`;
@@ -175,6 +221,18 @@
       });
   });
 
+  tikatetuSlides.forEach((photo) => {
+      photo.addEventListener('click', () => {
+          const track = photo.parentElement;
+          const siblings = Array.from(track.querySelectorAll('img'));
+          const imagePath = photo.getAttribute('src');
+          const idx = siblings.indexOf(photo);
+          const slides = siblings.map((img) => img.getAttribute('src')).join('|');
+
+          window.location.href = `beauty-editorial.html?image=${encodeURIComponent(imagePath)}&slides=${encodeURIComponent(slides)}&idx=${idx}&from=${encodeURIComponent('text.html')}`;
+      });
+  });
+
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -188,6 +246,11 @@
   photos.forEach(photo => {
       observer.observe(photo);
   });
+
+        const tikatetuSliders = document.querySelectorAll('.tikatetu-slider');
+        tikatetuSliders.forEach((slider) => {
+            observer.observe(slider);
+        });
 </script>
 <script type="application/ld+json">
 {

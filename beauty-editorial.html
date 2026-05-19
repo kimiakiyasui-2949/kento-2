@@ -99,14 +99,44 @@ main {
 .hero {
   position: relative;
   margin-top: 20px;
+  overflow: hidden;
 }
 
-.hero img {
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.hero-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.hero-slide img,
+.hero > img {
   width: 100%;
   display: block;
   max-height: 72vh;
   object-fit: cover;
 }
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  line-height: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
 .top-btn {
   position: absolute;
@@ -196,8 +226,13 @@ li {
   <a href="index.html" class="back-link" id="back-link">← Back</a>
 
   <div class="hero">
-    <img src="110st newyork.jpg" alt="Beauty editorial image" id="editorial-image">
-    
+    <div class="hero-track" id="hero-track">
+      <div class="hero-slide">
+        <img src="110st newyork.jpg" alt="Beauty editorial image" id="editorial-image">
+      </div>
+    </div>
+    <button id="prev-btn" class="slide-btn prev-btn">←</button>
+    <button id="next-btn" class="slide-btn next-btn">→</button>
   </div>
 
   <div class="box">
@@ -231,9 +266,19 @@ li {
   const imagePath = params.get('image');
   const fromPath = params.get('from');
   const photoId = params.get('photo');
+  const slidesParam = params.get('slides');
+  const idxParam = params.get('idx');
   const backLink = document.getElementById('back-link');
   const editorialImage = document.getElementById('editorial-image');
+  const heroTrack = document.getElementById('hero-track');
   const allowedBackPaths = new Set(['index.html', 'text.html']);
+  const fallbackGroups = [
+    ['art.jpg', 'shadow.jpg', 'tree.jpg'],
+    ['show.jpg', 'beach.jpg', 'subeay2.jpg'],
+    ['wiliamsburg.jpg', 'london.jpg', 'street.jpg'],
+    ['110st newyork.jpg', 'black.jpg', 'aunt1.jpg', 'bluesky.jpg', 'tika.jpg'],
+    ['snow.jpg', 'street.jpg', 'pink.jpg']
+  ];
 
   if (imagePath && editorialImage) {
     editorialImage.src = imagePath;
@@ -242,6 +287,65 @@ li {
 
   if (backLink && fromPath && allowedBackPaths.has(fromPath)) {
     backLink.href = photoId ? `${fromPath}#${photoId}` : fromPath;
+  }
+
+  if (backLink) {
+    backLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (history.length > 1) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+  }
+
+  if (heroTrack) {
+    let slides = slidesParam ? slidesParam.split('|') : null;
+    let currentIdx = parseInt(idxParam, 10);
+    if (!slides && imagePath) {
+      slides = fallbackGroups.find(function(group) {
+        return group.includes(imagePath);
+      }) || null;
+      currentIdx = slides ? slides.indexOf(imagePath) : -1;
+    }
+    if (!slides || slides.length < 2) {
+      slides = null;
+    }
+    if (!Number.isInteger(currentIdx) || currentIdx < 0) {
+      currentIdx = 0;
+    }
+    if (slides) {
+      const nextBtn = document.getElementById('next-btn');
+      const prevBtn = document.getElementById('prev-btn');
+
+      heroTrack.innerHTML = '';
+      slides.forEach(function(src) {
+        const slide = document.createElement('div');
+        slide.className = 'hero-slide';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = src + ' editorial image';
+        slide.appendChild(img);
+        heroTrack.appendChild(slide);
+      });
+
+      heroTrack.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+
+      function goTo(i) {
+        currentIdx = (i + slides.length) % slides.length;
+        heroTrack.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+      }
+
+      if (nextBtn) {
+        nextBtn.style.display = 'block';
+        nextBtn.addEventListener('click', function() { goTo(currentIdx + 1); });
+      }
+      if (prevBtn) {
+        prevBtn.style.display = 'block';
+        prevBtn.addEventListener('click', function() { goTo(currentIdx - 1); });
+      }
+    }
   }
 </script>
 <script type="application/ld+json">
