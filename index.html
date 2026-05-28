@@ -181,9 +181,9 @@ body{
 
 .show-track{
   display:flex;
-  width:300%;
+  width:800%;
   height:100%;
-  animation:wiliTrack 12s ease-in-out infinite;
+  animation:showTrack 21s ease-in-out infinite;
   animation-play-state:paused;
 }
 
@@ -192,7 +192,7 @@ body{
 }
 
 .show-slide-photo{
-  width:33.333%;
+  width:12.5%;
   height:100%;
   object-fit:contain;
   cursor:pointer;
@@ -238,11 +238,425 @@ body{
   flex-shrink:0;
 }
 
+@keyframes showTrack{
+  0%,    9% { transform:translateX(0%); }
+  12%,  21% { transform:translateX(-12.5%); }
+  24%,  33% { transform:translateX(-25%); }
+  36%,  45% { transform:translateX(-37.5%); }
+  48%,  57% { transform:translateX(-50%); }
+  60%,  69% { transform:translateX(-62.5%); }
+  72%,  81% { transform:translateX(-75%); }
+  84%,  99.9% { transform:translateX(-87.5%); }
+  100%       { transform:translateX(0%); }
+}
+
 @keyframes wiliTrack{
   0%, 28%  { transform:translateX(0); }
   33%, 61% { transform:translateX(-33.333%); }
   66%, 94% { transform:translateX(-66.666%); }
   99%, 100%{ transform:translateX(0); }
+}
+
+.show-slider2{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider2.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track2{
+  display:flex;
+  width:600%;
+  height:100%;
+  animation:showTrack2 15s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider2.show .show-track2{
+  animation-play-state:running;
+}
+
+.show-slide-photo2{
+  width:16.6667%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack2{
+  0%,   10% { transform:translateX(0%); }
+  17%,  27% { transform:translateX(-16.6667%); }
+  34%,  44% { transform:translateX(-33.3333%); }
+  51%,  61% { transform:translateX(-50%); }
+  68%,  78% { transform:translateX(-66.6667%); }
+  85%,  99.9% { transform:translateX(-83.3333%); }
+  100%        { transform:translateX(0%); }
+}
+
+.show-slider3{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider3.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track3{
+  display:flex;
+  width:700%;
+  height:100%;
+  animation:showTrack3 18s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider3.show .show-track3{
+  animation-play-state:running;
+}
+
+.show-slide-photo3{
+  width:14.2857%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack3{
+  0%,   10% { transform:translateX(0%); }
+  14%,  24% { transform:translateX(-14.2857%); }
+  28%,  38% { transform:translateX(-28.5714%); }
+  42%,  52% { transform:translateX(-42.8571%); }
+  56%,  66% { transform:translateX(-57.1428%); }
+  70%,  80% { transform:translateX(-71.4285%); }
+  84%,  99.9% { transform:translateX(-85.7142%); }
+  100%        { transform:translateX(0%); }
+}
+
+.show-slider4{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider4.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track4{
+  display:flex;
+  width:500%;
+  height:100%;
+  animation:showTrack4 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider4.show .show-track4{
+  animation-play-state:running;
+}
+
+.show-slide-photo4{
+  width:20%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack4{
+  0%,   12% { transform:translateX(0%); }
+  20%,  32% { transform:translateX(-20%); }
+  40%,  52% { transform:translateX(-40%); }
+  60%,  72% { transform:translateX(-60%); }
+  80%,  99.9% { transform:translateX(-80%); }
+  100%        { transform:translateX(0%); }
+}
+
+.show-slider5{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider5.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track5{
+  display:flex;
+  width:500%;
+  height:100%;
+  animation:showTrack4 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider5.show .show-track5{
+  animation-play-state:running;
+}
+
+.show-slide-photo5{
+  width:20%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+.show-slider6{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider6.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track6{
+  display:flex;
+  width:800%;
+  height:100%;
+  animation:showTrack 21s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider6.show .show-track6{
+  animation-play-state:running;
+}
+
+.show-slide-photo6{
+  width:12.5%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+.show-slider7{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider7.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track7{
+  display:flex;
+  width:400%;
+  height:100%;
+  animation:showTrack7 9s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider7.show .show-track7{
+  animation-play-state:running;
+}
+
+.show-slide-photo7{
+  width:25%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack7{
+  0%,   15% { transform:translateX(0%); }
+  25%,  40% { transform:translateX(-25%); }
+  50%,  65% { transform:translateX(-50%); }
+  75%,  99.9% { transform:translateX(-75%); }
+  100%        { transform:translateX(0%); }
+}
+
+.show-slider8{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider8.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track8{
+  display:flex;
+  width:500%;
+  height:100%;
+  animation:showTrack8 12s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider8.show .show-track8{
+  animation-play-state:running;
+}
+
+.show-slide-photo8{
+  width:20%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack8{
+  0%,   12% { transform:translateX(0%); }
+  20%,  32% { transform:translateX(-20%); }
+  40%,  52% { transform:translateX(-40%); }
+  60%,  72% { transform:translateX(-60%); }
+  80%,  99.9% { transform:translateX(-80%); }
+  100%        { transform:translateX(0%); }
+}
+
+.show-slider9{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider9.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track9{
+  display:flex;
+  width:600%;
+  height:100%;
+  animation:showTrack2 15s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider9.show .show-track9{
+  animation-play-state:running;
+}
+
+.show-slide-photo9{
+  width:16.6667%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+.show-slider10{
+  position:relative;
+  width:88%;
+  max-width:600px;
+  aspect-ratio:2 / 3;
+  margin:0 auto 20px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.show-slider10.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show-track10{
+  display:flex;
+  width:600%;
+  height:100%;
+  animation:showTrack10 8s ease-in-out infinite;
+  animation-play-state:paused;
+}
+
+.show-slider10.show .show-track10{
+  animation-play-state:running;
+}
+
+.show-slide-photo10{
+  width:16.667%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+  display:block;
+  flex-shrink:0;
+}
+
+@keyframes showTrack10{
+  0%,   30% { transform:translateX(0%); }
+  50%,  99.9% { transform:translateX(-16.667%); }
+  100%        { transform:translateX(0%); }
+}
+
+@media(max-width:767px){
+  .show-slide-photo2.pos-down45{
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
 }
 
 /* ===== PC ===== */
@@ -261,6 +675,84 @@ body{
     font-size:16px;
   }
 
+  .work-block{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:30px;
+  }
+
+  .block-photo-wrap{
+    width:48%;
+  }
+
+  .block-left .block-photo-wrap{
+    align-self:flex-start;
+  }
+
+  .block-right .block-photo-wrap{
+    align-self:flex-end;
+  }
+
+  .block-photo-wrap .photo{
+    max-width:100%;
+    width:100%;
+    margin:0 0 8px;
+  }
+
+  /* スライダー: 左右余白なし */
+  .show-slider,.show-slider2,.show-slider3,.show-slider4,.show-slider5,
+  .show-slider6,.show-slider7,.show-slider8,.show-slider9,.show-slider10{
+    width:100%;
+    max-width:100%;
+    height:340px;
+    aspect-ratio:unset;
+    margin:0 0 30px;
+  }
+
+  /* 縦長写真を上下いっぱいに表示 */
+  .show-slide-photo,.show-slide-photo2,.show-slide-photo3,.show-slide-photo4,.show-slide-photo5,
+  .show-slide-photo6,.show-slide-photo7,.show-slide-photo8,.show-slide-photo9,.show-slide-photo10{
+    object-fit:cover;
+    object-position:center top;
+  }
+
+  .show-slide-photo2.pos-down45{
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+
+  /* PC用トラック幅：4枚同時表示（縦長セル→縦長写真が収まる） */
+  .show-track  { width:200%; }
+  .show-track2 { width:150%; }
+  .show-track3 { width:175%; }
+  .show-track4 { width:125%; }
+  .show-track5 { width:125%; }
+  .show-track6 { width:200%; }
+  .show-track7 { width:133%; }
+  .show-track8 { width:167%; }
+  .show-track9 { width:150%; }
+  .show-track10 { width:200%; }
+
+  /* 連続スクロール用キーフレーム（左から右へ流れる） */
+  @keyframes pcScroll8{ 0%{transform:translateX(0)} 100%{transform:translateX(-87.5%)} }
+  @keyframes pcScroll7{ 0%{transform:translateX(0)} 100%{transform:translateX(-85.714%)} }
+  @keyframes pcScroll6{ 0%{transform:translateX(0)} 100%{transform:translateX(-83.333%)} }
+  @keyframes pcScroll5{ 0%{transform:translateX(0)} 100%{transform:translateX(-80%)} }
+  @keyframes pcScroll4{ 0%{transform:translateX(0)} 100%{transform:translateX(-75%)} }
+  @keyframes pcScroll2{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* 各スライダーに連続リニアスクロールを適用 */
+  .show-slider.show .show-track  { animation:pcScroll8 20s linear infinite; }
+  .show-slider2.show .show-track2 { animation:pcScroll6 15s linear infinite; }
+  .show-slider3.show .show-track3 { animation:pcScroll7 18s linear infinite; }
+  .show-slider4.show .show-track4 { animation:pcScroll5 13s linear infinite; }
+  .show-slider5.show .show-track5 { animation:pcScroll5 13s linear infinite; }
+  .show-slider6.show .show-track6 { animation:pcScroll8 20s linear infinite; }
+  .show-slider7.show .show-track7 { animation:pcScroll4 10s linear infinite; }
+  .show-slider8.show .show-track8 { animation:pcScroll5 13s linear infinite; }
+  .show-slider9.show .show-track9 { animation:pcScroll6 15s linear infinite; }
+  .show-slider10.show .show-track10 { animation:pcScroll2 10s linear infinite; }
+
 }
 
 footer{
@@ -269,15 +761,97 @@ footer{
   padding:20px;
 }
 
+/* ===== Lightbox ===== */
+#lb-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+}
+#lb-overlay.open{ display:flex; }
+#lb-overlay img{
+  max-width:82vw;
+  max-height:90vh;
+  object-fit:contain;
+  display:block;
+}
+#lb-close{
+  position:fixed;
+  top:14px;
+  right:18px;
+  font-size:42px;
+  line-height:1;
+  color:#fff;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:0;
+  user-select:none;
+}
+#lb-prev,#lb-next{
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.35);
+  border:none;
+  color:#fff;
+  font-size:54px;
+  line-height:1;
+  padding:10px 16px;
+  cursor:pointer;
+  z-index:10000;
+  user-select:none;
+  transition:background 0.2s;
+}
+#lb-prev{ left:10px; }
+#lb-next{ right:10px; }
+#lb-prev:hover,#lb-next:hover{ background:rgba(0,0,0,0.65); }
+/* ===== Caption dropdown ===== */
+.caption-toggle{
+  cursor:pointer;
+  user-select:none;
+}
+.caption-toggle::after{
+  content:' +';
+  font-size:12px;
+  opacity:0.6;
+}
+.caption-toggle.open::after{
+  content:' −';
+}
+.caption-drop{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  text-align:center;
+}
+.caption-drop.open{
+  max-height:60px;
+}
+.caption-drop a{
+  display:inline-block;
+  color:#ccc;
+  font-size:13px;
+  text-decoration:none;
+  padding:6px 0 10px;
+  letter-spacing:0.05em;
+}
+.caption-drop a:hover{
+  color:#fff;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="intro-wrapper">
-  <img src="road.jpg" class="intro-img img1">
-  <img src="snow-2.jpg" class="intro-img img2">
-  <img src="street-1.jpg" class="intro-img img3">
+  <img src="_DSC0878-Edit.jpg" class="intro-img img1">
+  <img src="_DSC0738-Edit.jpg" class="intro-img img2">
+  <img src="_DSC1431-Edit.jpg" class="intro-img img3">
 
   <div class="intro-text">UTSUBO KENTO</div>
   <div class="intro-sub">Photographer</div>
@@ -292,63 +866,220 @@ footer{
 
   <p>Kent's Worldwide Photo Collection</p>
 
-  <img src="110st newyork.jpg" 
-  class="photo"><p>text</p>
-
-
-      <img src="art.jpg" 
-      class="photo"><p>text</p>
-
-      
-
-  
+  <div class="work-block block-left">
+    <div class="block-photo-wrap">
+      <img src="_DSC7110-Edit.jpg" class="photo">
+      <p class="caption-toggle" id="cap1">2026.5.17 Philomena Sophie woman</p>
+      <div class="caption-drop" id="cap1-drop">
+        <a href="beauty-editorial.html">詳細を見る →</a>
+      </div>
+    </div>
     <div class="show-slider">
     <div class="show-track">
-      <img src="aunt1.jpg" class="show-slide-photo">
-      <img src="beach.jpg" class="show-slide-photo">
-      <img src="subeay2.jpg" class="show-slide-photo">
+      <img src="_DSC7005-Edit.jpg" class="show-slide-photo">
+      <img src="_DSC7063-Edit.jpg" class="show-slide-photo">
+      <img src="_DSC6850-Edit.jpg" class="show-slide-photo">
+      <img src="_DSC6865-Edit.jpg" class="show-slide-photo">
+      <img src="_DSC6979-Editb.jpg" class="show-slide-photo">
+      <img src="_DSC7100-Edit.jpg" class="show-slide-photo">
+      <img src="_DSC7005-Edit.jpg" class="show-slide-photo">
     </div>
-  </div><p>text</p>
+    </div>
+  </div>
+
+  <div class="work-block block-right">
+    <div class="block-photo-wrap">
+      <img src="_DSC3679-Edit.jpg" class="photo">
+      <p>2026.5.7 Raika Sales woman</p>
+    </div>
+    <div class="show-slider2">
+    <div class="show-track2">
+     
+      <img src="_DSC3752-Edit.jpg" class="show-slide-photo2">
+      <img src="_DSC3641-Editb.jpg" class="show-slide-photo2">
+      <img src="_DSC3317-Editb.jpg" class="show-slide-photo2">
+      <img src="_DSC3641-Editb.jpg" class="show-slide-photo2">
+      <img src="_DSC3503-Editb.jpg" class="show-slide-photo2 pos-down45">
+       <img src="_DSC3588-Edit.jpg" class="show-slide-photo2">
+    </div>
+    </div>
+  </div>
+ 
+
   
-  <img src="black.jpg" 
-      class="photo"><p>text</p>
 
 
+  <div class="work-block block-left">
+    <div class="block-photo-wrap">
+      <img src="_DSC5678-Edit.jpg" class="photo">
+      <p>2026.6.15 Monet NY model</p>
+    </div>
+    <div class="show-slider3">
+    <div class="show-track3">
+      <img src="_DSC5882-Edit.jpg" class="show-slide-photo3">
+      <img src="_DSC5964-Edit.jpg" class="show-slide-photo3">
+      <img src="_DSC5977-Edit.jpg" class="show-slide-photo3">
+      <img src="_DSC5454-Edit-1.jpg" class="show-slide-photo3">
+      <img src="_DSC5534-Edit-1.jpg" class="show-slide-photo3">
+      <img src="_DSC5630-Edit.jpg" class="show-slide-photo3">
+      <img src="_DSC5882-Edit.jpg" class="show-slide-photo3">
+    </div>
+    </div>
+  </div>
 
+  <div class="work-block block-right">
+    <div class="block-photo-wrap">
+      <img src="3.jpg" class="photo">
+      <p>2026.4.8 Madison Wilhelmina</p>
+    </div>
+    <div class="show-slider4">
+    <div class="show-track4">
+      <img src="_DSC7510-Edit.jpg" class="show-slide-photo4">
+      <img src="_DSC7502-Edit2.jpg" class="show-slide-photo4">
+      <img src="_DSC7501-Edit.jpg" class="show-slide-photo4">
+      <img src="_DSC7453-Edit.jpg" class="show-slide-photo4">
+      <img src="_DSC7510-Edit.jpg" class="show-slide-photo4">
+    </div>
+    </div>
+  </div>
 
+  <div class="work-block block-left">
+    <div class="block-photo-wrap">
+      <img src="_DSC7865-Edit.2jpg.jpg" class="photo">
+      <p>2026.4.12 Kelsy woman</p>
+    </div>
+    <div class="show-slider5">
+    <div class="show-track5">
+      <img src="_DSC8129-Edit2.jpg" class="show-slide-photo5">
+      <img src="_DSC8186-Edit.jpg" class="show-slide-photo5">
+      <img src="_DSC7755-Edit2.jpg" class="show-slide-photo5">
+      <img src="_DSC8511-Edit2.jpg" class="show-slide-photo5">
+    </div>
+    </div>
+  </div>
+    <div class="work-block block-right">
+    <div class="block-photo-wrap">
+      <img src="_DSC3451-Edit4.jpg" class="photo">
+      <p>2025.11.06 BROOK Woman</p>
+    </div>
+    <div class="show-slider10">
+    <div class="show-track10">
+      <img src="_DSC3387-Edit3.jpg" class="show-slide-photo10">
+      <img src="_DSC3400-Edit2.jpg" class="show-slide-photo10">
     
+    </div>
+    </div>
+  </div>
+  <div class="work-block block-right">
+    <div class="block-photo-wrap">
+      <img src="_DSC1082-Edit.jpg" class="photo">
+      <p>Hannha and Emani</p>
+    </div>
+    <div class="show-slider6">
+      <div class="show-track6">
+        <img src="_DSC1378-Edit-2.jpg" class="show-slide-photo6">
+        <img src="_DSC0994-Editb.jpg" class="show-slide-photo6">
+        <img src="_DSC1332-Edit.jpg" class="show-slide-photo6">
+        <img src="_DSC0027-Edit.jpg" class="show-slide-photo6">
+        <img src="_DSC1431-Edit.jpg" class="show-slide-photo6">
+        <img src="_DSC1513-Edit.jpg" class="show-slide-photo6">
+        <img src="_DSC1497-Edit@1x_1-1.jpg" class="show-slide-photo6">
+        <img src="_DSC1378-Edit-2.jpg" class="show-slide-photo6">
+      </div>
+    </div>
+  </div>
 
+  <div class="work-block block-left">
+    <div class="block-photo-wrap">
+      <img src="_DSC5727-Edit2.jpg" class="photo">
+      <p>2026.4.3 Sanique The society </p>
+    </div>
+    <div class="show-slider7">
+      <div class="show-track7">
+        
+        <img src="_DSC5677-Edit2.jpg" class="show-slide-photo7">
+        <img src="_DSC5641-Edit2.jpg" class="show-slide-photo7">
+        <img src="_DSC5452-Edit.jpg" class="show-slide-photo7">
+        <img src="_DSC5677-Edit2.jpg" class="show-slide-photo7">
+      </div>
+    </div>
+  </div>
 
+  <div class="work-block block-right">
+    <div class="block-photo-wrap">
+      <img src="_DSC4544-Edit b.jpg" class="photo">
+      <p>2026.5.9 Olivia woman </p>
+    </div>
+    <div class="show-slider8">
+      <div class="show-track8">
+        <img src="_DSC3873-Edit.jpg" class="show-slide-photo8">
+        <img src="_DSC4510-Edit.jpg" class="show-slide-photo8">
+        <img src="_DSC4932-Edit1.jpg" class="show-slide-photo8">
+        <img src="_DSC3873-Edit.jpg" class="show-slide-photo8">
+       
+        
+      </div>
+    </div>
+  </div>
 
-  
-  
-
-
-</section>
+  <div class="work-block block-left">
+    <div class="block-photo-wrap">
+      <img src="_DSC0879-Edit.jpg" class="photo">
+      <p>2026.5.1 Hannah woman</p>
+    </div>
+    <div class="show-slider9">
+      <div class="show-track9">
+        <img src="_DSC0878-Edit.jpg" class="show-slide-photo9">
+        <img src="_DSC0738-Edit.jpg" class="show-slide-photo9">
+        <img src="_DSC0879-Edit.jpg" class="show-slide-photo9">
+        <img src="_DSC0148-Edit.jpg" class="show-slide-photo9">
+      </div>
+    </div>
+  </div>
+  </section>
 
 <script>
+// Caption dropdown
+document.getElementById('cap1').addEventListener('click',function(){
+  this.classList.toggle('open');
+  document.getElementById('cap1-drop').classList.toggle('open');
+});
+
+const photoPageMap={
+  '_DSC7110-Edit.jpg':    'beauty-editorial.html',
+  '_DSC3679-Edit.jpg':    'beauty-editorial-2.html',
+  '_DSC5678-Edit.jpg':    'beauty-editorial-3.html',
+  '3.jpg':                'beauty-editorial-4.html',
+  '_DSC7865-Edit.2jpg.jpg':'beauty-editorial-5.html',
+  '_DSC1082-Edit.jpg':    'beauty-editorial-6.html',
+  '_DSC5727-Edit2.jpg':   'beauty-editorial-7.html',
+  '_DSC4544-Edit b.jpg':  'beauty-editorial-8.html',
+  '_DSC0879-Edit.jpg':    'beauty-editorial-9.html',
+  '_DSC3451-Edit4.jpg':   'beauty-editorial-10.html'
+};
+
 const photos=document.querySelectorAll('.photo');
 const allPhotoSrcs=Array.from(photos).map((photo)=>photo.getAttribute('src'));
 
 photos.forEach((photo)=>{
   photo.addEventListener('click',()=>{
     const src=photo.getAttribute('src');
-    const idx=allPhotoSrcs.indexOf(src);
-    const slides=allPhotoSrcs.join('|');
-    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}&slides=${encodeURIComponent(slides)}&idx=${idx}`;
+    window.lbOpen([src],0);
   });
 });
 
-document.querySelectorAll('.art-slide-photo, .show-slide-photo, .wili-slide-photo').forEach((photo)=>{
-  photo.addEventListener('click',()=>{
-    const src=photo.getAttribute('src');
-    const track=photo.parentElement;
-    const siblings=Array.from(track.querySelectorAll('img'));
-    const idx=siblings.indexOf(photo);
-    const slides=siblings.map((img)=>img.getAttribute('src')).join('|');
-    window.location.href=`beauty-editorial.html?image=${encodeURIComponent(src)}&slides=${encodeURIComponent(slides)}&idx=${idx}`;
+// 全スライダー画像 → ライトボックス（左右ナビ付き）
+document.querySelectorAll('[class*="show-slide-photo"]').forEach(function(photo){
+  photo.addEventListener('click',function(){
+    var track=photo.parentElement;
+    var images=Array.from(track.querySelectorAll('img')).map(function(img){ return img.getAttribute('src'); });
+    var idx=images.indexOf(photo.getAttribute('src'));
+    if(idx<0) idx=0;
+    window.lbOpen(images,idx);
   });
 });
+
+
 
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -363,8 +1094,61 @@ const artSlider=document.querySelector('.art-slider');
 if(artSlider) observer.observe(artSlider);
 const showSlider=document.querySelector('.show-slider');
 if(showSlider) observer.observe(showSlider);
+const showSlider2=document.querySelector('.show-slider2');
+if(showSlider2) observer.observe(showSlider2);
+const showSlider3=document.querySelector('.show-slider3');
+if(showSlider3) observer.observe(showSlider3);
+const showSlider4=document.querySelector('.show-slider4');
+if(showSlider4) observer.observe(showSlider4);
+const showSlider5=document.querySelector('.show-slider5');
+if(showSlider5) observer.observe(showSlider5);
+const showSlider6=document.querySelector('.show-slider6');
+if(showSlider6) observer.observe(showSlider6);
+const showSlider7=document.querySelector('.show-slider7');
+if(showSlider7) observer.observe(showSlider7);
+const showSlider8=document.querySelector('.show-slider8');
+if(showSlider8) observer.observe(showSlider8);
+const showSlider9=document.querySelector('.show-slider9');
+if(showSlider9) observer.observe(showSlider9);
+const showSlider10=document.querySelector('.show-slider10');
+if(showSlider10) observer.observe(showSlider10);
 const wiliSlider=document.querySelector('.wili-slider');
 if(wiliSlider) observer.observe(wiliSlider);
+</script>
+
+<div id="lb-overlay">
+  <button id="lb-close" aria-label="閉じる">&#215;</button>
+  <button id="lb-prev" aria-label="前へ">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" aria-label="次へ">&#8250;</button>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('lb-overlay');
+  var lbImg=document.getElementById('lb-img');
+  var lbImages=[];
+  var lbIndex=0;
+  function closeLb(){ ov.classList.remove('open'); lbImg.src=''; document.body.style.overflow=''; }
+  function showAt(i){ lbIndex=((i%lbImages.length)+lbImages.length)%lbImages.length; lbImg.src=lbImages[lbIndex]; }
+  window.lbOpen=function(images,index){
+    lbImages=images;
+    var multi=images.length>1;
+    document.getElementById('lb-prev').style.display=multi?'':'none';
+    document.getElementById('lb-next').style.display=multi?'':'none';
+    showAt(index);
+    ov.classList.add('open');
+    document.body.style.overflow='hidden';
+  };
+  document.getElementById('lb-close').addEventListener('click',closeLb);
+  document.getElementById('lb-prev').addEventListener('click',function(e){ e.stopPropagation(); showAt(lbIndex-1); });
+  document.getElementById('lb-next').addEventListener('click',function(e){ e.stopPropagation(); showAt(lbIndex+1); });
+  ov.addEventListener('click',function(e){ if(e.target===ov) closeLb(); });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft'&&ov.classList.contains('open')) showAt(lbIndex-1);
+    if(e.key==='ArrowRight'&&ov.classList.contains('open')) showAt(lbIndex+1);
+  });
+})();
 </script>
 
 <footer>©Kimiaki Yasui</footer>

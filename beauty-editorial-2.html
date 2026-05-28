@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ustubo Kento | Raika Sales</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #040404;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.header {
+  background: #0f0f0f;
+  padding: 8px 20px;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #a82086;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.meta {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0c0c0c;
+  border-bottom: 1px solid #0b0b0b;
+  color: #ffffff;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.user {
+  background: #020202;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.search {
+  background: #0c0c0c;
+  padding: 10px 20px;
+  border-bottom: 1px solid #0b0b0b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.hero {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.hero-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.hero-slide img,
+.hero > img {
+  width: 100%;
+  display: block;
+  max-height: 90vh;
+  object-fit: contain;
+  background: #040404;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  line-height: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.box {
+  background: #0c0c0c;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.link {
+  color: #8c7a2a;
+  cursor: pointer;
+}
+
+.small {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer {
+  padding: 18px 12px 28px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 640px) {
+  .nav,
+  .search {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .box,
+  .back-link {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+/* ===== gallery slider ===== */
+.gallery-slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  background: #040404;
+  touch-action: pan-y;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.gallery-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.gallery-slide img {
+  width: 100%;
+  display: block;
+  max-height: 80vh;
+  object-fit: contain;
+  background: #040404;
+}
+
+.gallery-slide img.pos-down45 {
+  object-fit: contain;
+  transform: translateY(50%);
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+}
+
+.gallery-prev { left: 8px; }
+.gallery-next { right: 8px; }
+
+.gallery-dots {
+  display: none;
+}
+
+.gallery-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #555;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.gallery-dot.active {
+  background: #fff;
+}
+@media screen and (min-width: 641px) {
+  .header { display: none; }
+}
+</style>
+</head>
+<body>
+
+<section class="header">
+  <div class="wrap">
+    <h1> Raika Sales woman </h1>
+    
+</section>
+
+<main>
+  <a href="index.html" class="back-link" id="back-link">← Back</a>
+
+  <div class="gallery-slider" id="gallery-slider">
+    <div class="gallery-track" id="gallery-track">
+     
+      <div class="gallery-slide"><img src="_DSC3752-Edit.jpg" alt="Raika Sales"></div>
+      <div class="gallery-slide"><img src="_DSC3641-Editb.jpg" alt="Raika Sales"></div>
+      <div class="gallery-slide"><img src="_DSC3317-Editb.jpg" alt="Raika Sales"></div>
+      <div class="gallery-slide"><img src="_DSC3503-Editb.jpg" alt="Raika Sales" class="pos-down45"></div>
+      <div class="gallery-slide"><img src="_DSC3588-Edit.jpg" alt="Raika Sales"></div>
+    </div>
+    <button class="gallery-btn gallery-prev" id="gallery-prev">←</button>
+    <button class="gallery-btn gallery-next" id="gallery-next">→</button>
+  </div>
+
+  <div class="box">
+    In this picture: <span class="link">2026.5.7 Raika Sales woman</span>
+  </div>
+
+  <div class="box">
+    <h3>All people in this editorial:</h3>
+    <p class="small">See something wrong? <span class="link">Let us know</span></p>
+    <ul>
+      <li><span class="link">Kento Utsubo</span> - Photographer</li>
+      <li><span class="link">Raika Sales</span> - Model</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="site-footer">©Kimiaki Yasui</footer>
+
+<script>
+  const backLink = document.getElementById('back-link');
+
+  if (backLink) {
+    backLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (history.length > 1) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+  }
+
+  // gallery slider
+  (function() {
+    var track = document.getElementById('gallery-track');
+    var slides = track ? Array.from(track.querySelectorAll('.gallery-slide')) : [];
+    var total = slides.length;
+    var cur = 0;
+
+    if (!track || total === 0) return;
+
+    function moveTo(i) {
+      cur = (i + total) % total;
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    }
+
+    document.getElementById('gallery-prev').addEventListener('click', function() { moveTo(cur - 1); });
+    document.getElementById('gallery-next').addEventListener('click', function() { moveTo(cur + 1); });
+
+    // touch swipe
+    var startX = 0;
+    track.parentElement.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.parentElement.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) moveTo(diff > 0 ? cur + 1 : cur - 1);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

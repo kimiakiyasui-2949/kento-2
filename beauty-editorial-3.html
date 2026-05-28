@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ustubo Kento | Monet NY Model</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #040404;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.header {
+  background: #0f0f0f;
+  padding: 8px 20px;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #a82086;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.meta {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.hero {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.hero-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.hero-slide img {
+  width: 100%;
+  display: block;
+  max-height: 90vh;
+  object-fit: contain;
+  background: #040404;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  line-height: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.box {
+  background: #0c0c0c;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.link {
+  color: #8c7a2a;
+  cursor: pointer;
+}
+
+.small {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer {
+  padding: 18px 12px 28px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 640px) {
+  .box,
+  .back-link {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .header { display: none; }
+}
+</style>
+</head>
+<body>
+
+<section class="header">
+  <div class="wrap">
+    <h1> Monet NY model</h1>
+   
+</section>
+
+<main>
+  <a href="index.html" class="back-link" id="back-link">← Back</a>
+
+  <div class="hero">
+    <div class="hero-track" id="hero-track">
+      <div class="hero-slide">
+        <img src="_DSC5882-Edit.jpg" alt="Monet NY Model editorial image" id="editorial-image">
+      </div>
+    </div>
+    <button id="prev-btn" class="slide-btn prev-btn">←</button>
+    <button id="next-btn" class="slide-btn next-btn">→</button>
+  </div>
+
+  <div class="box">
+    In this picture: <span class="link">2026.6.15 Monet NY model</span>
+  </div>
+
+  <div class="box">
+    <h3>All people in this editorial:</h3>
+    <p class="small">See something wrong? <span class="link">Let us know</span></p>
+    <ul>
+      <li><span class="link">Kento Utsubo</span> - Photographer</li>
+      <li><span class="link">Monet</span> - Model</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="site-footer">©Kimiaki Yasui</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const imagePath = params.get('image');
+  const slidesParam = params.get('slides');
+  const idxParam = params.get('idx');
+
+  const editorialImage = document.getElementById('editorial-image');
+  const heroTrack = document.getElementById('hero-track');
+  const backLink = document.getElementById('back-link');
+
+  const defaultSlides = [
+    '_DSC5882-Edit.jpg',
+    '_DSC5964-Edit.jpg',
+    '_DSC5977-Edit.jpg',
+    '_DSC5454-Edit-1.jpg',
+    '_DSC5534-Edit-1.jpg',
+    '_DSC5630-Edit.jpg'
+  ];
+
+  if (imagePath && editorialImage) {
+    editorialImage.src = imagePath;
+    editorialImage.alt = imagePath + ' editorial image';
+  }
+
+  if (backLink) {
+    backLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (history.length > 1) {
+        history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+  }
+
+  if (heroTrack) {
+    let slides = slidesParam ? slidesParam.split('|').filter(function(s, i, arr) {
+      return arr.indexOf(s) === i;
+    }) : defaultSlides;
+    let currentIdx = parseInt(idxParam, 10);
+    if (!Number.isInteger(currentIdx) || currentIdx < 0 || currentIdx >= slides.length) {
+      currentIdx = 0;
+    }
+
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+
+    heroTrack.innerHTML = '';
+    slides.forEach(function(src) {
+      const slide = document.createElement('div');
+      slide.className = 'hero-slide';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = src + ' editorial image';
+      slide.appendChild(img);
+      heroTrack.appendChild(slide);
+    });
+
+    heroTrack.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+
+    function goTo(i) {
+      currentIdx = (i + slides.length) % slides.length;
+      heroTrack.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+    }
+
+    if (nextBtn) {
+      nextBtn.style.display = 'block';
+      nextBtn.addEventListener('click', function() { goTo(currentIdx + 1); });
+    }
+    if (prevBtn) {
+      prevBtn.style.display = 'block';
+      prevBtn.addEventListener('click', function() { goTo(currentIdx - 1); });
+    }
+  }
+</script>
+</body>
+</html>
