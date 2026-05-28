@@ -309,7 +309,7 @@ img{
 
 <p class="text-7">Kento's Masterpiece</p>
 
-<img src="7110.jpg" class="photo">
+<img src="7100.jpg" class="photo">
 <p></p>
 
 <div class="tikatetu-slider">
@@ -466,7 +466,8 @@ const observer = new IntersectionObserver(entries => {
     });
 
 },{
-    threshold:0.2
+    threshold:0,
+    rootMargin:'0px 0px -20px 0px'
 });
 
 photos.forEach(photo => {
