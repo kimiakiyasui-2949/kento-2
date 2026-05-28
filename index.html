@@ -162,6 +162,28 @@ body{
   flex-shrink:0;
 }
 
+.slider-mobile-link{
+  display:block;
+  text-decoration:none;
+  pointer-events:none;
+}
+@media (max-width:768px){
+  .slider-mobile-link{
+    pointer-events:auto;
+  }
+}
+
+.block-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+@media (min-width:768px){
+  .block-link{
+    pointer-events:none;
+  }
+}
+
 .show-slider{
   position:relative;
   width:88%;
@@ -183,7 +205,7 @@ body{
   display:flex;
   width:800%;
   height:100%;
-  animation:showTrack 21s ease-in-out infinite;
+  animation:showTrack0 18s linear infinite;
   animation-play-state:paused;
 }
 
@@ -238,6 +260,11 @@ body{
   flex-shrink:0;
 }
 
+@keyframes showTrack0{
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-75%); }
+}
+
 @keyframes showTrack{
   0%,    9% { transform:translateX(0%); }
   12%,  21% { transform:translateX(-12.5%); }
@@ -278,7 +305,7 @@ body{
   display:flex;
   width:600%;
   height:100%;
-  animation:showTrack2 15s ease-in-out infinite;
+  animation:showTrack2 19s linear infinite;
   animation-play-state:paused;
 }
 
@@ -289,20 +316,16 @@ body{
 .show-slide-photo2{
   width:16.6667%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack2{
-  0%,   10% { transform:translateX(0%); }
-  17%,  27% { transform:translateX(-16.6667%); }
-  34%,  44% { transform:translateX(-33.3333%); }
-  51%,  61% { transform:translateX(-50%); }
-  68%,  78% { transform:translateX(-66.6667%); }
-  85%,  99.9% { transform:translateX(-83.3333%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-83.3333%); }
 }
 
 .show-slider3{
@@ -326,7 +349,7 @@ body{
   display:flex;
   width:700%;
   height:100%;
-  animation:showTrack3 18s ease-in-out infinite;
+  animation:showTrack3 16s linear infinite;
   animation-play-state:paused;
 }
 
@@ -337,21 +360,16 @@ body{
 .show-slide-photo3{
   width:14.2857%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack3{
-  0%,   10% { transform:translateX(0%); }
-  14%,  24% { transform:translateX(-14.2857%); }
-  28%,  38% { transform:translateX(-28.5714%); }
-  42%,  52% { transform:translateX(-42.8571%); }
-  56%,  66% { transform:translateX(-57.1428%); }
-  70%,  80% { transform:translateX(-71.4285%); }
-  84%,  99.9% { transform:translateX(-85.7142%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-85.7142%); }
 }
 
 .show-slider4{
@@ -375,7 +393,7 @@ body{
   display:flex;
   width:500%;
   height:100%;
-  animation:showTrack4 12s ease-in-out infinite;
+  animation:showTrack4 12s linear infinite;
   animation-play-state:paused;
 }
 
@@ -386,19 +404,16 @@ body{
 .show-slide-photo4{
   width:20%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack4{
-  0%,   12% { transform:translateX(0%); }
-  20%,  32% { transform:translateX(-20%); }
-  40%,  52% { transform:translateX(-40%); }
-  60%,  72% { transform:translateX(-60%); }
-  80%,  99.9% { transform:translateX(-80%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-80%); }
 }
 
 .show-slider5{
@@ -422,7 +437,7 @@ body{
   display:flex;
   width:500%;
   height:100%;
-  animation:showTrack4 12s ease-in-out infinite;
+  animation:showTrack4 15s linear infinite;
   animation-play-state:paused;
 }
 
@@ -433,7 +448,8 @@ body{
 .show-slide-photo5{
   width:20%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
@@ -460,7 +476,7 @@ body{
   display:flex;
   width:800%;
   height:100%;
-  animation:showTrack 21s ease-in-out infinite;
+  animation:showTrack6 25s linear infinite;
   animation-play-state:paused;
 }
 
@@ -471,10 +487,16 @@ body{
 .show-slide-photo6{
   width:12.5%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
+}
+
+@keyframes showTrack6{
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-87.5%); }
 }
 
 .show-slider7{
@@ -498,7 +520,7 @@ body{
   display:flex;
   width:400%;
   height:100%;
-  animation:showTrack7 9s ease-in-out infinite;
+  animation:showTrack7 9s linear infinite;
   animation-play-state:paused;
 }
 
@@ -509,18 +531,16 @@ body{
 .show-slide-photo7{
   width:25%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack7{
-  0%,   15% { transform:translateX(0%); }
-  25%,  40% { transform:translateX(-25%); }
-  50%,  65% { transform:translateX(-50%); }
-  75%,  99.9% { transform:translateX(-75%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-75%); }
 }
 
 .show-slider8{
@@ -542,9 +562,9 @@ body{
 
 .show-track8{
   display:flex;
-  width:500%;
+  width:400%;
   height:100%;
-  animation:showTrack8 12s ease-in-out infinite;
+  animation:showTrack8 12s linear infinite;
   animation-play-state:paused;
 }
 
@@ -553,21 +573,18 @@ body{
 }
 
 .show-slide-photo8{
-  width:20%;
+  width:25%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack8{
-  0%,   12% { transform:translateX(0%); }
-  20%,  32% { transform:translateX(-20%); }
-  40%,  52% { transform:translateX(-40%); }
-  60%,  72% { transform:translateX(-60%); }
-  80%,  99.9% { transform:translateX(-80%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-75%); }
 }
 
 .show-slider9{
@@ -589,9 +606,9 @@ body{
 
 .show-track9{
   display:flex;
-  width:600%;
+  width:500%;
   height:100%;
-  animation:showTrack2 15s ease-in-out infinite;
+  animation:showTrack9 15s linear infinite;
   animation-play-state:paused;
 }
 
@@ -600,12 +617,18 @@ body{
 }
 
 .show-slide-photo9{
-  width:16.6667%;
+  width:20%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
+}
+
+@keyframes showTrack9{
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-80%); }
 }
 
 .show-slider10{
@@ -627,9 +650,9 @@ body{
 
 .show-track10{
   display:flex;
-  width:600%;
+  width:300%;
   height:100%;
-  animation:showTrack10 8s ease-in-out infinite;
+  animation:showTrack10 8s linear infinite;
   animation-play-state:paused;
 }
 
@@ -638,18 +661,18 @@ body{
 }
 
 .show-slide-photo10{
-  width:16.667%;
+  width:33.333%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center top;
   cursor:pointer;
   display:block;
   flex-shrink:0;
 }
 
 @keyframes showTrack10{
-  0%,   30% { transform:translateX(0%); }
-  50%,  99.9% { transform:translateX(-16.667%); }
-  100%        { transform:translateX(0%); }
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-66.667%); }
 }
 
 @media(max-width:767px){
@@ -697,6 +720,8 @@ body{
     max-width:100%;
     width:100%;
     margin:0 0 8px;
+    pointer-events:auto;
+    cursor:pointer;
   }
 
   /* スライダー: 左右余白なし */
@@ -714,6 +739,8 @@ body{
   .show-slide-photo6,.show-slide-photo7,.show-slide-photo8,.show-slide-photo9,.show-slide-photo10{
     object-fit:cover;
     object-position:center top;
+    pointer-events:auto;
+    cursor:pointer;
   }
 
   .show-slide-photo2.pos-down45{
@@ -729,9 +756,9 @@ body{
   .show-track5 { width:125%; }
   .show-track6 { width:200%; }
   .show-track7 { width:133%; }
-  .show-track8 { width:167%; }
-  .show-track9 { width:150%; }
-  .show-track10 { width:200%; }
+  .show-track8 { width:133%; }
+  .show-track9 { width:125%; }
+  .show-track10 { width:150%; }
 
   /* 連続スクロール用キーフレーム（左から右へ流れる） */
   @keyframes pcScroll8{ 0%{transform:translateX(0)} 100%{transform:translateX(-87.5%)} }
@@ -740,18 +767,19 @@ body{
   @keyframes pcScroll5{ 0%{transform:translateX(0)} 100%{transform:translateX(-80%)} }
   @keyframes pcScroll4{ 0%{transform:translateX(0)} 100%{transform:translateX(-75%)} }
   @keyframes pcScroll2{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  @keyframes pcScroll3a{ 0%{transform:translateX(0)} 100%{transform:translateX(-66.667%)} }
 
   /* 各スライダーに連続リニアスクロールを適用 */
-  .show-slider.show .show-track  { animation:pcScroll8 20s linear infinite; }
-  .show-slider2.show .show-track2 { animation:pcScroll6 15s linear infinite; }
-  .show-slider3.show .show-track3 { animation:pcScroll7 18s linear infinite; }
+  .show-slider.show .show-track  { animation:pcScroll8 18s linear infinite; }
+  .show-slider2.show .show-track2 { animation:pcScroll6 19s linear infinite; }
+  .show-slider3.show .show-track3 { animation:pcScroll7 16s linear infinite; }
   .show-slider4.show .show-track4 { animation:pcScroll5 13s linear infinite; }
-  .show-slider5.show .show-track5 { animation:pcScroll5 13s linear infinite; }
-  .show-slider6.show .show-track6 { animation:pcScroll8 20s linear infinite; }
+  .show-slider5.show .show-track5 { animation:pcScroll5 15s linear infinite; }
+  .show-slider6.show .show-track6 { animation:pcScroll8 24s linear infinite; }
   .show-slider7.show .show-track7 { animation:pcScroll4 10s linear infinite; }
-  .show-slider8.show .show-track8 { animation:pcScroll5 13s linear infinite; }
-  .show-slider9.show .show-track9 { animation:pcScroll6 15s linear infinite; }
-  .show-slider10.show .show-track10 { animation:pcScroll2 10s linear infinite; }
+  .show-slider8.show .show-track8 { animation:pcScroll4 13s linear infinite; }
+  .show-slider9.show .show-track9 { animation:pcScroll5 15s linear infinite; }
+  .show-slider10.show .show-track10 { animation:pcScroll3a 10s linear infinite; }
 
 }
 
@@ -874,6 +902,7 @@ footer{
         <a href="beauty-editorial.html">詳細を見る →</a>
       </div>
     </div>
+    <a href="beauty-editorial.html" class="slider-mobile-link">
     <div class="show-slider">
     <div class="show-track">
       <img src="7005.jpg" class="show-slide-photo">
@@ -883,10 +912,13 @@ footer{
       <img src="6979.jpg" class="show-slide-photo">
       <img src="7100.jpg" class="show-slide-photo">
       <img src="7005.jpg" class="show-slide-photo">
+      <img src="7063.jpg" class="show-slide-photo">
     </div>
     </div>
+    </a>
   </div>
 
+  <a href="beauty-editorial-2.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
       <img src="3679.jpg" class="photo">
@@ -901,14 +933,17 @@ footer{
     
       <img src="3503.jpg" class="show-slide-photo2 pos-down45">
        <img src="3588.jpg" class="show-slide-photo2">
+      <img src="3752.jpg" class="show-slide-photo2">
     </div>
     </div>
   </div>
+  </a>
  
 
   
 
 
+  <a href="beauty-editorial-3.html" class="block-link">
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="5678.jpg" class="photo">
@@ -926,7 +961,9 @@ footer{
     </div>
     </div>
   </div>
+  </a>
 
+  <a href="beauty-editorial-4.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
       <img src="3.jpg" class="photo">
@@ -942,7 +979,9 @@ footer{
     </div>
     </div>
   </div>
+  </a>
 
+  <a href="beauty-editorial-5.html" class="block-link">
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="7865.jpg" class="photo">
@@ -958,6 +997,8 @@ footer{
     </div>
     </div>
   </div>
+  </a>
+  <a href="beauty-editorial-10.html" class="block-link">
     <div class="work-block block-right">
     <div class="block-photo-wrap">
       <img src="3451.jpg" class="photo">
@@ -967,10 +1008,12 @@ footer{
     <div class="show-track10">
       <img src="3387.jpg" class="show-slide-photo10">
       <img src="3400.jpg" class="show-slide-photo10">
-    
+      <img src="3387.jpg" class="show-slide-photo10">
     </div>
     </div>
   </div>
+  </a>
+  <a href="beauty-editorial-6.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
       <img src="1082.jpg" class="photo">
@@ -989,7 +1032,9 @@ footer{
       </div>
     </div>
   </div>
+  </a>
 
+  <a href="beauty-editorial-7.html" class="block-link">
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="5727.jpg" class="photo">
@@ -1005,7 +1050,9 @@ footer{
       </div>
     </div>
   </div>
+  </a>
 
+  <a href="beauty-editorial-8.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
       <img src="4544.jpg" class="photo">
@@ -1022,7 +1069,9 @@ footer{
       </div>
     </div>
   </div>
+  </a>
 
+  <a href="beauty-editorial-9.html" class="block-link">
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="0879.jpg" class="photo">
@@ -1034,9 +1083,11 @@ footer{
         <img src="0738.jpg" class="show-slide-photo9">
         <img src="0879.jpg" class="show-slide-photo9">
         <img src="0148.jpg" class="show-slide-photo9">
+        <img src="0878.jpg" class="show-slide-photo9">
       </div>
     </div>
   </div>
+  </a>
   </section>
 
 <script>
@@ -1063,20 +1114,31 @@ const photos=document.querySelectorAll('.photo');
 const allPhotoSrcs=Array.from(photos).map((photo)=>photo.getAttribute('src'));
 
 photos.forEach((photo)=>{
-  photo.addEventListener('click',()=>{
+  photo.addEventListener('click',(e)=>{
+    e.preventDefault();
+    e.stopPropagation();
     const src=photo.getAttribute('src');
     window.lbOpen([src],0);
   });
 });
 
-// 全スライダー画像 → ライトボックス（左右ナビ付き）
+// 全スライダー画像 → PC:ライトボックス / スマホ:リンク遷移
 document.querySelectorAll('[class*="show-slide-photo"]').forEach(function(photo){
-  photo.addEventListener('click',function(){
+  photo.addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
     var track=photo.parentElement;
     var images=Array.from(track.querySelectorAll('img')).map(function(img){ return img.getAttribute('src'); });
     var idx=images.indexOf(photo.getAttribute('src'));
     if(idx<0) idx=0;
-    window.lbOpen(images,idx);
+    if(window.matchMedia('(min-width:768px)').matches){
+      // PC: ライトボックスで表示
+      window.lbOpen(images,idx);
+    } else {
+      // スマホ: 親の<a>のhrefへ遷移
+      var link=photo.closest('a.block-link') || photo.closest('a.slider-mobile-link');
+      if(link) window.location.href=link.href;
+    }
   });
 });
 
