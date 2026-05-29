@@ -80,6 +80,7 @@ main {
   max-height: 90vh;
 }
 
+
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -95,8 +96,17 @@ main {
   line-height: 1;
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
+
+.prev-btn {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10%);
+}
+.next-btn {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(10%);
+}
 
 .box {
   background: #0c0c0c;
