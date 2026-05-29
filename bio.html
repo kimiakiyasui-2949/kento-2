@@ -15,6 +15,7 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+      overflow-y: hidden; /* 縦スクロールを無効化 */
     }
 
     .text{
@@ -80,11 +81,16 @@
 
 <a href="manu.html" class="text">manu</a>
 
-<h2>Contact</h2>
+<h2 style="margin-left: 9px;">Contact</h2>
 
+<!--
+  FormspreeのURLは後から自分のものに差し替えてください。
+  https://formspree.io/ に無料登録し、フォームIDを取得して下記actionに設定します。
+  例: action="https://formspree.io/f/あなたのID"
+-->
 <form
   class="contact-form"
-  action="https://formspree.io/f/xxxxabcd"
+  action="https://formspree.io/f/ここに自分のIDを入れる"
   method="POST"
 >
   <h3>Contact</h3>
