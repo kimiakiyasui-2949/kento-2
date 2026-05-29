@@ -893,10 +893,39 @@ footer{
 
 <body>
 
-<script>
-if(!sessionStorage.getItem('from_manu')){
-  window.location.replace('manu.html');
+<style>
+#manu-overlay{
+  position:fixed;inset:0;background:black;z-index:9999;
+  opacity:1;transition:opacity 0.8s ease;overflow:hidden;
 }
+#manu-overlay.hide{opacity:0;pointer-events:none;}
+#manu-overlay .mo-text-6{position:absolute;top:10px;padding-left:24px;font-size:18px;color:#f7f1f1;opacity:0;animation:moFade 1.5s ease forwards;}
+#manu-overlay .mo-text-7{position:absolute;top:40px;padding-left:24px;font-size:24px;color:#f7f1f1;opacity:0;animation:moFade 1.5s ease forwards;}
+#manu-overlay a{font-size:24px;color:white;position:absolute;padding-left:24px;opacity:0;animation:moFade 1.5s ease forwards;text-decoration:none;display:block;}
+#manu-overlay .mo-4{top:65%;animation-delay:0.3s;}
+#manu-overlay .mo-1{top:70%;animation-delay:0.6s;}
+#manu-overlay .mo-2{top:75%;animation-delay:0.9s;}
+#manu-overlay .mo-3{top:80%;animation-delay:1.2s;}
+#manu-overlay footer{position:absolute;bottom:0;left:0;width:100%;padding:18px 12px 24px;color:white;text-align:center;font-size:13px;box-sizing:border-box;opacity:0;animation:moFade 1.5s ease 1.4s forwards;}
+@keyframes moFade{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+</style>
+
+<div id="manu-overlay">
+  <p class="mo-text-6">Photographer</p>
+  <p class="mo-text-7">KENTO USTUBO</p>
+  <a href="#" class="mo-4" id="mo-portfolio">Portfolio</a>
+  <a href="text.html" class="mo-1">Beauty</a>
+  <a href="beuty.html" class="mo-2">biography</a>
+  <a href="bio.html" class="mo-3">Contact</a>
+  <footer>©Kimiaki Yasui</footer>
+</div>
+<script>
+document.getElementById('mo-portfolio').addEventListener('click',function(e){
+  e.preventDefault();
+  var ov=document.getElementById('manu-overlay');
+  ov.classList.add('hide');
+  setTimeout(function(){ov.style.display='none';},800);
+});
 </script>
 
 <div class="intro-wrapper">
