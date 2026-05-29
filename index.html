@@ -696,6 +696,13 @@ body{
     width: 98vw;
     max-width: 320px;
   }
+  .caption-left-pc,
+  .caption-right-pc {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+  }
 }
 
 /* ===== PC ===== */
@@ -738,6 +745,47 @@ body{
     margin:0 0 8px;
     pointer-events:auto;
     cursor:pointer;
+  }
+
+  .block-photo-wrap:has(.caption-right-pc){
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+  }
+  .block-photo-wrap:has(.caption-right-pc) .photo{
+    width:65%;
+    flex-shrink:0;
+    margin:0;
+  }
+  .caption-right-pc{
+    flex:1;
+    font-size:14px;
+    color:white;
+  }
+
+  .block-photo-wrap:has(.caption-left-pc){
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+  }
+  .block-photo-wrap:has(.caption-left-pc) .photo{
+    width:65%;
+    flex-shrink:0;
+    margin:0;
+    order:2;
+  }
+  .caption-left-pc{
+    flex:1;
+    font-size:14px;
+    color:white;
+    order:1;
+    text-align:right;
   }
 
   /* スライダー: 左右余白なし */
@@ -920,12 +968,19 @@ footer{
   <footer>©Kimiaki Yasui</footer>
 </div>
 <script>
-document.getElementById('mo-portfolio').addEventListener('click',function(e){
-  e.preventDefault();
+(function(){
   var ov=document.getElementById('manu-overlay');
-  ov.classList.add('hide');
-  setTimeout(function(){ov.style.display='none';},800);
-});
+  if(sessionStorage.getItem('manu_shown')){
+    ov.style.display='none';
+  } else {
+    sessionStorage.setItem('manu_shown','1');
+  }
+  document.getElementById('mo-portfolio').addEventListener('click',function(e){
+    e.preventDefault();
+    ov.classList.add('hide');
+    setTimeout(function(){ov.style.display='none';},800);
+  });
+})();
 </script>
 
 <div class="intro-wrapper">
@@ -948,13 +1003,11 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
 
   <div class="work-block block-left">
     <div class="block-photo-wrap">
-      <img src="7110.jpg" class="photo">
-      <p class="caption-toggle" id="cap1">2026.5.17 Philomena Sophie woman</p>
-      <div class="caption-drop" id="cap1-drop">
-        <a href="beauty-editorial.html">詳細を見る →</a>
-      </div>
+        <img src="7110.jpg" class="photo">
+        <div class="caption-right-pc">
+          <p>2026.5.17 Philomena Sophie woman</p>
+        </div>
     </div>
-    <a href="beauty-editorial.html" class="slider-mobile-link">
     <div class="show-slider">
     <div class="show-track">
       <img src="7005.jpg" class="show-slide-photo">
@@ -967,14 +1020,13 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
       <img src="7063.jpg" class="show-slide-photo">
     </div>
     </div>
-    </a>
   </div>
 
   <a href="beauty-editorial-2.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
+      <div class="caption-left-pc">2026.5.7 Raika Sales woman</div>
       <img src="3679.jpg" class="photo">
-      <p>2026.5.7 Raika Sales woman</p>
     </div>
     <div class="show-slider2">
     <div class="show-track2">
@@ -999,7 +1051,7 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="5678.jpg" class="photo">
-      <p>2026.6.15 Monet NY model</p>
+      <div class="caption-right-pc">2026.6.15 Monet NY model</div>
     </div>
     <div class="show-slider3">
     <div class="show-track3">
@@ -1018,8 +1070,8 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <a href="beauty-editorial-4.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
+      <div class="caption-left-pc">2026.4.8 Madison Wilhelmina</div>
       <img src="3.jpg" class="photo">
-      <p>2026.4.8 Madison Wilhelmina</p>
     </div>
     <div class="show-slider4">
     <div class="show-track4">
@@ -1037,7 +1089,7 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="7865.jpg" class="photo">
-      <p>2026.4.12 Kelsy woman</p>
+      <div class="caption-right-pc">2026.4.12 Kelsy woman</div>
     </div>
     <div class="show-slider5">
     <div class="show-track5">
@@ -1053,8 +1105,8 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <a href="beauty-editorial-10.html" class="block-link">
     <div class="work-block block-right">
     <div class="block-photo-wrap">
+      <div class="caption-left-pc">2025.11.06 BROOK Woman</div>
       <img src="3451.jpg" class="photo">
-      <p>2025.11.06 BROOK Woman</p>
     </div>
     <div class="show-slider10">
     <div class="show-track10">
@@ -1068,8 +1120,8 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <a href="beauty-editorial-6.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
+      <div class="caption-left-pc">Hannha and Emani</div>
       <img src="1082.jpg" class="photo">
-      <p>Hannha and Emani</p>
     </div>
     <div class="show-slider6">
       <div class="show-track6">
@@ -1090,7 +1142,7 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="5727.jpg" class="photo">
-      <p>2026.4.3 Sanique The society </p>
+      <div class="caption-right-pc">2026.4.3 Sanique The society</div>
     </div>
     <div class="show-slider7">
       <div class="show-track7">
@@ -1107,8 +1159,8 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <a href="beauty-editorial-8.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
+      <div class="caption-left-pc">2026.5.9 Olivia woman</div>
       <img src="4544.jpg" class="photo">
-      <p>2026.5.9 Olivia woman </p>
     </div>
     <div class="show-slider8">
       <div class="show-track8">
@@ -1127,7 +1179,7 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="0879.jpg" class="photo">
-      <p>2026.5.1 Hannah woman</p>
+      <div class="caption-right-pc">2026.5.1 Hannah woman</div>
     </div>
     <div class="show-slider9">
       <div class="show-track9">
@@ -1145,12 +1197,6 @@ document.getElementById('mo-portfolio').addEventListener('click',function(e){
   </section>
 
 <script>
-// Caption dropdown
-document.getElementById('cap1').addEventListener('click',function(){
-  this.classList.toggle('open');
-  document.getElementById('cap1-drop').classList.toggle('open');
-});
-
 const photoPageMap={
   '7110.jpg':    'beauty-editorial.html',
   '3679.jpg':    'beauty-editorial-2.html',
