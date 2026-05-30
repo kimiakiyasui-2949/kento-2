@@ -347,9 +347,9 @@ body{
 
 .show-track3{
   display:flex;
-  width:700%;
+  width:600%;
   height:100%;
-  animation:showTrack3 16s linear infinite;
+  animation:showTrack3 18s linear infinite;
   animation-play-state:paused;
 }
 
@@ -358,7 +358,7 @@ body{
 }
 
 .show-slide-photo3{
-  width:14.2857%;
+  width:16.6667%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -369,7 +369,7 @@ body{
 
 @keyframes showTrack3{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-85.7142%); }
+  100% { transform:translateX(-83.333%); }
 }
 
 .show-slider4{
@@ -831,7 +831,7 @@ body{
   /* PC用トラック幅：4枚同時表示（縦長セル→縦長写真が収まる） */
   .show-track  { width:200%; }
   .show-track2 { width:150%; }
-  .show-track3 { width:175%; }
+  .show-track3 { width:150%; }
   .show-track4 { width:125%; }
   .show-track5 { width:100%; }
   .show-track6 { width:175%; }
@@ -852,7 +852,7 @@ body{
   /* 各スライダーに連続リニアスクロールを適用 */
   .show-slider.show .show-track  { animation:pcScroll8 18s linear infinite; }
   .show-slider2.show .show-track2 { animation:pcScroll6 19s linear infinite; }
-  .show-slider3.show .show-track3 { animation:pcScroll7 16s linear infinite; }
+  .show-slider3.show .show-track3 { animation:showTrack3 18s linear infinite; }
   .show-slider4.show .show-track4 { animation:pcScroll5 13s linear infinite; }
   .show-slider5.show .show-track5 { animation:showTrack5 15s linear infinite; }
 
