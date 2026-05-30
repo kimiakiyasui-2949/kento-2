@@ -703,6 +703,17 @@ body{
     color: white;
     margin-bottom: 10px;
   }
+  .block-photo-wrap:has(.caption-right-pc){
+    display:flex;
+    flex-direction:column;
+  }
+  .block-photo-wrap:has(.caption-right-pc) .caption-right-pc{
+    order:-1;
+    margin-bottom:10px;
+  }
+  .block-photo-wrap:has(.caption-right-pc) .photo{
+    margin:0 auto 20px;
+  }
 }
 
 /* ===== PC ===== */
@@ -961,7 +972,7 @@ footer{
 <div id="manu-overlay">
   <p class="mo-text-6">Photographer</p>
   <p class="mo-text-7">KENTO USTUBO</p>
-  <a href="#" class="mo-4" id="mo-portfolio">Portfolio</a>
+  <a href="#" class="mo-4" id="mo-portfolio">Portrait</a>
   <a href="text.html" class="mo-1">Beauty</a>
   <a href="beuty.html" class="mo-2">biography</a>
   <a href="bio.html" class="mo-3">Contact</a>
@@ -1000,12 +1011,13 @@ footer{
 <section class="main">
 
   <p>Kent's Worldwide Photo Collection</p>
-
+  <br><br>
   <div class="work-block block-left">
     <div class="block-photo-wrap">
         <img src="7110.jpg" class="photo">
         <div class="caption-right-pc">
-          <p>2026.5.17 Philomena Sophie woman</p>
+          <p>Philomena Sophie woman</p>
+          <p>@NY models</p>
         </div>
     </div>
     <div class="show-slider">
@@ -1025,7 +1037,9 @@ footer{
   <a href="beauty-editorial-2.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
-      <div class="caption-left-pc">2026.5.7 Raika Sales woman</div>
+      <div class="caption-left-pc">
+        <p>Raika Sales</p><p>@woman management</p> 
+      </div>
       <img src="3679.jpg" class="photo">
     </div>
     <div class="show-slider2">
@@ -1051,7 +1065,7 @@ footer{
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="5678.jpg" class="photo">
-      <div class="caption-right-pc">2026.6.15 Monet NY model</div>
+      <div class="caption-right-pc"><p>Monet</p><p>@NY models</p></div>
     </div>
     <div class="show-slider3">
     <div class="show-track3">
@@ -1070,7 +1084,8 @@ footer{
   <a href="beauty-editorial-4.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
-      <div class="caption-left-pc">2026.4.8 Madison Wilhelmina</div>
+      <div class="caption-left-pc"><p>Madison</p><p>@Wilhelmina</p></div>
+      
       <img src="3.jpg" class="photo">
     </div>
     <div class="show-slider4">
@@ -1089,8 +1104,9 @@ footer{
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="7865.jpg" class="photo">
-      <div class="caption-right-pc">2026.4.12 Kelsy woman</div>
+      <div class="caption-right-pc"><p>Kelsy</p><p>@woman management</p></div>
     </div>
+  </div>
     <div class="show-slider5">
     <div class="show-track5">
       <img src="8129.jpg" class="show-slide-photo5">
@@ -1105,7 +1121,7 @@ footer{
   <a href="beauty-editorial-10.html" class="block-link">
     <div class="work-block block-right">
     <div class="block-photo-wrap">
-      <div class="caption-left-pc">2025.11.06 BROOK Woman</div>
+      <div class="caption-left-pc"><p>BROOK</p><p>@woman management</p></div>
       <img src="3451.jpg" class="photo">
     </div>
     <div class="show-slider10">
@@ -1120,7 +1136,8 @@ footer{
   <a href="beauty-editorial-6.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
-      <div class="caption-left-pc">Hannha and Emani</div>
+      <div class="caption-left-pc"><p>Hannh×Emani</p><p>@woman management</p></div>
+      
       <img src="1082.jpg" class="photo">
     </div>
     <div class="show-slider6">
@@ -1141,8 +1158,9 @@ footer{
   <a href="beauty-editorial-7.html" class="block-link">
   <div class="work-block block-left">
     <div class="block-photo-wrap">
+     
       <img src="5727.jpg" class="photo">
-      <div class="caption-right-pc">2026.4.3 Sanique The society</div>
+      <div class="caption-right-pc"> <p>Sanique</p><p>@The society management</p></div>
     </div>
     <div class="show-slider7">
       <div class="show-track7">
@@ -1159,7 +1177,7 @@ footer{
   <a href="beauty-editorial-8.html" class="block-link">
   <div class="work-block block-right">
     <div class="block-photo-wrap">
-      <div class="caption-left-pc">2026.5.9 Olivia woman</div>
+      <div class="caption-left-pc"><p>Olivia slatt</p><p>@woman manegement</p></div>
       <img src="4544.jpg" class="photo">
     </div>
     <div class="show-slider8">
@@ -1179,8 +1197,9 @@ footer{
   <div class="work-block block-left">
     <div class="block-photo-wrap">
       <img src="0879.jpg" class="photo">
-      <div class="caption-right-pc">2026.5.1 Hannah woman</div>
+      <div class="caption-right-pc"><p>Hannah Elizabeth</p><p>@woman management</p></div>
     </div>
+    
     <div class="show-slider9">
       <div class="show-track9">
         <img src="0878.jpg" class="show-slide-photo9">
