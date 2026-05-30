@@ -129,9 +129,9 @@ img{
 
 .tikatetu-track{
     display:flex;
-    width:300%;
+    width:200%;
 
-    animation:tikatetuTrack 12s ease-in-out infinite;
+    animation:tikatetuTrack 10s ease-in-out infinite;
     animation-play-state:paused;
 }
 
@@ -140,7 +140,7 @@ img{
 }
 
 .tikatetu-slide-photo{
-    width:33.333%;
+    width:50%;
     flex-shrink:0;
     cursor:pointer;
     object-fit:cover;
@@ -152,19 +152,15 @@ img{
 
 @keyframes tikatetuTrack {
 
-    0%, 28%{
+    0%, 35%{
         transform:translateX(0);
     }
 
-    33%, 61%{
-        transform:translateX(-33.333%);
+    40%, 85%{
+        transform:translateX(-50%);
     }
 
-    66%, 94%{
-        transform:translateX(-66.666%);
-    }
-
-    99%, 100%{
+    90%, 100%{
         transform:translateX(0);
     }
 }
@@ -309,28 +305,19 @@ img{
 
 <p class="text-7">Kento's Masterpiece</p>
 
-<img src="7110.jpg" class="photo">
+
 <p></p>
 
-<div class="tikatetu-slider">
-    <div class="tikatetu-track">
-        <img src="5678.jpg" class="tikatetu-slide-photo">
-        <img src="7510.jpg" class="tikatetu-slide-photo">
-        <img src="2577.jpg" class="tikatetu-slide-photo">
-    </div>
+<div>
+    <img src="2577.jpg" class="photo">
+</div>
+  
 </div>
 
-<p></p>
-
-<img src="4932.jpg" class="photo">
-<p></p>
-
-<img src="3679.jpg" class="photo">
-<p></p>
 
 <div class="tikatetu-slider">
     <div class="tikatetu-track">
-        <img src="3752.jpg" class="tikatetu-slide-photo">
+       
         <img src="5617.jpg" class="tikatetu-slide-photo">
         <img src="5279.jpg" class="tikatetu-slide-photo">
     </div>
@@ -341,7 +328,6 @@ img{
 <img src="0633.jpg" class="photo">
 <p></p>
 <img src="3789.jpg" class="photo">
-<img src="0878.jpg" class="photo">
 <img src="0931.jpg" class="photo">
 
 </section>
