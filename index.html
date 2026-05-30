@@ -986,11 +986,6 @@ footer{
 <script>
 (function(){
   var ov=document.getElementById('manu-overlay');
-  if(sessionStorage.getItem('manu_shown')){
-    ov.style.display='none';
-  } else {
-    sessionStorage.setItem('manu_shown','1');
-  }
   document.getElementById('mo-portfolio').addEventListener('click',function(e){
     e.preventDefault();
     ov.classList.add('hide');
