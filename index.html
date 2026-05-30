@@ -435,9 +435,9 @@ body{
 
 .show-track5{
   display:flex;
-  width:500%;
+  width:400%;
   height:100%;
-  animation:showTrack4 15s linear infinite;
+  animation:showTrack5 15s linear infinite;
   animation-play-state:paused;
 }
 
@@ -445,8 +445,13 @@ body{
   animation-play-state:running;
 }
 
+@keyframes showTrack5{
+  0%   { transform:translateX(0%); }
+  100% { transform:translateX(-75%); }
+}
+
 .show-slide-photo5{
-  width:20%;
+  width:25%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -474,7 +479,7 @@ body{
 
 .show-track6{
   display:flex;
-  width:800%;
+  width:700%;
   height:100%;
   animation:showTrack6 25s linear infinite;
   animation-play-state:paused;
@@ -485,7 +490,7 @@ body{
 }
 
 .show-slide-photo6{
-  width:12.5%;
+  width:14.2857%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -496,7 +501,7 @@ body{
 
 @keyframes showTrack6{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-87.5%); }
+  100% { transform:translateX(-85.7143%); }
 }
 
 .show-slider7{
@@ -518,7 +523,7 @@ body{
 
 .show-track7{
   display:flex;
-  width:400%;
+  width:300%;
   height:100%;
   animation:showTrack7 9s linear infinite;
   animation-play-state:paused;
@@ -529,7 +534,7 @@ body{
 }
 
 .show-slide-photo7{
-  width:25%;
+  width:33.333%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -540,7 +545,7 @@ body{
 
 @keyframes showTrack7{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-75%); }
+  100% { transform:translateX(-66.667%); }
 }
 
 .show-slider8{
@@ -562,9 +567,9 @@ body{
 
 .show-track8{
   display:flex;
-  width:400%;
+  width:300%;
   height:100%;
-  animation:showTrack8 12s linear infinite;
+  animation:showTrack8 8s linear infinite;
   animation-play-state:paused;
 }
 
@@ -573,7 +578,7 @@ body{
 }
 
 .show-slide-photo8{
-  width:25%;
+  width:33.333%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -584,7 +589,7 @@ body{
 
 @keyframes showTrack8{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-75%); }
+  100% { transform:translateX(-66.667%); }
 }
 
 .show-slider9{
@@ -606,7 +611,7 @@ body{
 
 .show-track9{
   display:flex;
-  width:500%;
+  width:400%;
   height:100%;
   animation:showTrack9 15s linear infinite;
   animation-play-state:paused;
@@ -617,7 +622,7 @@ body{
 }
 
 .show-slide-photo9{
-  width:20%;
+  width:25%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -628,7 +633,7 @@ body{
 
 @keyframes showTrack9{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-80%); }
+  100% { transform:translateX(-75%); }
 }
 
 .show-slider10{
@@ -650,9 +655,9 @@ body{
 
 .show-track10{
   display:flex;
-  width:300%;
+  width:200%;
   height:100%;
-  animation:showTrack10 8s linear infinite;
+  animation:showTrack10 6s linear infinite;
   animation-play-state:paused;
 }
 
@@ -661,7 +666,7 @@ body{
 }
 
 .show-slide-photo10{
-  width:33.333%;
+  width:50%;
   height:100%;
   object-fit:cover;
   object-position:center top;
@@ -672,7 +677,7 @@ body{
 
 @keyframes showTrack10{
   0%   { transform:translateX(0%); }
-  100% { transform:translateX(-66.667%); }
+  100% { transform:translateX(-50%); }
 }
 
 @media(max-width:767px){
@@ -829,11 +834,11 @@ body{
   .show-track3 { width:175%; }
   .show-track4 { width:125%; }
   .show-track5 { width:125%; }
-  .show-track6 { width:200%; }
-  .show-track7 { width:133%; }
-  .show-track8 { width:133%; }
-  .show-track9 { width:250%; }
-  .show-track10 { width:150%; }
+  .show-track6 { width:175%; }
+  .show-track7 { width:100%; }
+  .show-track8 { width:100%; }
+  .show-track9 { width:200%; }
+  .show-track10 { width:100%; }
 
   /* 連続スクロール用キーフレーム（左から右へ流れる） */
   @keyframes pcScroll8{ 0%{transform:translateX(0)} 100%{transform:translateX(-87.5%)} }
@@ -849,13 +854,12 @@ body{
   .show-slider2.show .show-track2 { animation:pcScroll6 19s linear infinite; }
   .show-slider3.show .show-track3 { animation:pcScroll7 16s linear infinite; }
   .show-slider4.show .show-track4 { animation:pcScroll5 13s linear infinite; }
-  .show-slider5.show .show-track5 { animation:pcScroll5 15s linear infinite; }
+  .show-slider5.show .show-track5 { animation:showTrack5 15s linear infinite; }
   .show-slider6.show .show-track6 { animation:pcScroll8 24s linear infinite; }
   .show-slider7.show .show-track7 { animation:pcScroll4 10s linear infinite; }
-  .show-slider8.show .show-track8 { animation:pcScroll4 13s linear infinite; }
-  .show-slider9.show .show-track9 { animation:pcScroll9 16s linear infinite; }
-    @keyframes pcScroll9{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-  .show-slider10.show .show-track10 { animation:pcScroll3a 10s linear infinite; }
+  .show-slider8.show .show-track8 { animation:showTrack8 8s linear infinite; }
+  .show-slider9.show .show-track9 { animation:showTrack9 15s linear infinite; }
+  .show-slider10.show .show-track10 { animation:showTrack10 6s linear infinite; }
 
 }
 
@@ -1075,7 +1079,6 @@ footer{
       <img src="5454.jpg" class="show-slide-photo3">
       <img src="5534.jpg" class="show-slide-photo3">
       <img src="5630.jpg" class="show-slide-photo3">
-      <img src="5882.jpg" class="show-slide-photo3">
     </div>
     </div>
   </div>
@@ -1112,8 +1115,7 @@ footer{
       <img src="8129.jpg" class="show-slide-photo5">
       <img src="8186.jpg" class="show-slide-photo5">
       <img src="7755.jpg" class="show-slide-photo5">
-      <img src="8511.jpg" class="show-slide-photo5">
-      <img src="8129.jpg" class="show-slide-photo5">
+     
     </div>
     </div>
   </div>
@@ -1128,7 +1130,6 @@ footer{
     <div class="show-track10">
       <img src="3387.jpg" class="show-slide-photo10">
       <img src="3400.jpg" class="show-slide-photo10">
-      <img src="3387.jpg" class="show-slide-photo10">
     </div>
     </div>
   </div>
@@ -1149,7 +1150,6 @@ footer{
         <img src="1431.jpg" class="show-slide-photo6">
         <img src="1513.jpg" class="show-slide-photo6">
         <img src="1497.jpg" class="show-slide-photo6">
-        <img src="1378.jpg" class="show-slide-photo6">
       </div>
     </div>
   </div>
@@ -1168,7 +1168,6 @@ footer{
         <img src="5677.jpg" class="show-slide-photo7">
         <img src="5641.jpg" class="show-slide-photo7">
         <img src="5452.jpg" class="show-slide-photo7">
-        <img src="5677.jpg" class="show-slide-photo7">
       </div>
     </div>
   </div>
@@ -1185,9 +1184,6 @@ footer{
         <img src="3873.jpg" class="show-slide-photo8">
         <img src="4510.jpg" class="show-slide-photo8">
         <img src="4932.jpg" class="show-slide-photo8">
-        <img src="3873.jpg" class="show-slide-photo8">
-       
-        
       </div>
     </div>
   </div>
@@ -1206,9 +1202,8 @@ footer{
         <img src="0738.jpg" class="show-slide-photo9">
         <img src="0148.jpg" class="show-slide-photo9">
         <img src="0878.jpg" class="show-slide-photo9">
-        <img src="0738.jpg" class="show-slide-photo9">
-        <img src="0148.jpg" class="show-slide-photo9">
-        <img src="0878.jpg" class="show-slide-photo9">
+       
+     
       </div>
     </div>
   </div>
