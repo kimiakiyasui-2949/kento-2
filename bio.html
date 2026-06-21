@@ -87,14 +87,21 @@
 
 <h2 style="margin-left: 9px;">Contact</h2>
 
+<!--
+  FormspreeのURLは後から自分のものに差し替えてください。
+  https://formspree.io/ に無料登録し、フォームIDを取得して下記actionに設定します。
+  例: action="https://formspree.io/f/あなたのID"
+-->
 <form
   class="contact-form"
-  action="https://formspree.io/f/xjgqbwnk"
+  action="https://formspree.io/f/ここに自分のIDを入れる"
   method="POST"
 >
   <h3>Contact</h3>
+  <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" rows="3" placeholder="Message" required></textarea>
+  <input type="text" name="subject" placeholder="Subject" required>
+  <textarea name="message" rows="5" placeholder="Message" required></textarea>
   <button type="submit">Send</button>
 </form>
 
